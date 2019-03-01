@@ -24,6 +24,12 @@ url: "https://xiandew.github.io/" # the base hostname & protocol for your site, 
 twitter_username: xiande123
 github_username:  xiandew
 
+# Disqus Comments
+disqus:
+    # Leave shortname blank to disable comments site-wide.
+    # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
+    shortname: xiandew-github-io
+
 # Build settings
 markdown: kramdown
 theme: minima
