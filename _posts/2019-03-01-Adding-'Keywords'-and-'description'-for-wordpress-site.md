@@ -71,4 +71,4 @@ add_action('wp_head', 'meta_seo');
 
 # **References**
 
-- [WordPress使用经验（一）独立的Description 和 Keywords](https://www.ludou.org/wordpress-exp-1.html)
+- [WordPress使用经验（一）独立的Description 和 Keywords](https://www.ludou.org/wordpress-exp-1.html){:target="_blank"}
