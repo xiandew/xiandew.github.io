@@ -1,10 +1,9 @@
 ---
   layout: post
-  title: 收到备案成功的短信仍无法访问域名
+  title: Notes on filing ICP license
   tags:
   categories:
-    - 域名备案
-  excerpt: test
+    - ICP license
 ---
 
 收到备案成功短信，仍无法访问
