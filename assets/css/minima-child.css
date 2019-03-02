@@ -1,0 +1,89 @@
+body {
+  letter-spacing: .034em;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+
+a {
+  transition: color .1s linear, background-color .1s linear, opacity .1s linear;
+}
+
+.site-header {
+  border-top: none;
+}
+.site-title-wrapper {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 2.5rem 0;
+}
+.site-title {
+  display: block;
+  float: none;
+  letter-spacing: inherit;
+  font-weight: bold;
+  font-size: 2.25rem;
+}
+
+.post-list li {
+  padding: 30px 20px;
+  border: 1px solid #e7eaf1;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0,37,55,.06);
+}
+.post-content {
+    margin-bottom: 5rem;
+}
+.post-meta {
+  margin-top: 10px;
+}
+.post-title {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  letter-spacing: inherit;
+}
+.post-link {
+  color: #4e4e4e;
+  display: table;
+  font-weight: bold;
+}
+.post-link:hover {
+  color:#686868;
+  text-decoration: none;
+  box-shadow: 0 1px 0 0 currentColor;
+}
+.post-excerpt {
+  margin: 10px 0;
+}
+
+.contact {
+  float: none;
+}
+.social {
+  padding-left: 15px;
+  display: block;
+}
+.social-media-list li {
+    display: inline;
+}
+.social-media-list a {
+
+}
+.social-media-list a:hover .svg-icon {
+    fill: #2a7ae2;
+}
+.social-media-list .username {
+    display: none;
+}
+
+blockquote {
+  border-left: .25em solid #dfe2e5;
+  padding: 0 1em;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  font-style: normal;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  color: #6a737d;
+  margin-bottom: 16px;
+}
