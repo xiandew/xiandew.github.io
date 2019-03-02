@@ -12,7 +12,7 @@
     {% if page == paginator.page %}
       <em>{{ page }}</em>
     {% elsif page == 1 %}
-      <a href="{{ site.url }}">
+      <a href="{{ site.url | absolute_url }}">
         {{ page }}
       </a>
     {% else %}
