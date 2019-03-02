@@ -24,7 +24,7 @@ url: "https://xiandew.github.io/" # the base hostname & protocol for your site, 
 #permalink: /:categories/:title/
 excerpt_separator: <!--more-->
 paginate: 5
-paginate_path: "page:num"
+paginate_path: "/page:num"
 
 twitter_username: xiande123
 github_username:  xiandew
