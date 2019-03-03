@@ -63,5 +63,5 @@ TO BE DONE
 
 # **References**
 
-- [wikipedia](https://en.wikipedia.org/wiki/Computer_font#Bitmap_fonts){:target="_blank"}
-- [gamedev.net](https://www.gamedev.net/forums/topic/284560-bmfont-and-how-to-interpret-the-fnt-file/#comment-2785731_wrap){:target="_blank"}
+- [Computer fonts > Bitmap fonts](https://en.wikipedia.org/wiki/Computer_font#Bitmap_fonts){:target="_blank"}
+- [Bmfont and how to interpret the .fnt file](https://www.gamedev.net/forums/topic/284560-bmfont-and-how-to-interpret-the-fnt-file/#comment-2785731_wrap){:target="_blank"}
