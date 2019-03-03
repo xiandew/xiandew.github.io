@@ -69,6 +69,9 @@ a:hover {
   line-height: 1.3;
   letter-spacing: inherit;
 }
+.post .post-title {
+  margin-top: 30px;
+}
 .post-link {
   color: #4e4e4e;
   display: table;
@@ -111,7 +114,7 @@ blockquote {
   border-left: .25em solid #dfe2e5;
   padding: 0 1em;
   font-size: 0.95rem;
-  letter-spacing: 0;
+  letter-spacing: .034rem;
   font-style: normal;
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
   color: #6a737d;

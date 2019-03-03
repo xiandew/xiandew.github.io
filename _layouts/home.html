@@ -23,19 +23,7 @@ layout: default
         {{ post.excerpt | strip_html | truncatewords: 40 }}
       </p>
 
-      <div class="post-categories">
-        {% if post %}
-          {% assign categories = post.categories %}
-        {% else %}
-          {% assign categories = page.categories %}
-        {% endif %}
-        {% for category in categories %}
-          <a class="category_name" href="{{'/categories/#' | prepeand: site.url | append: category | relative_url }}">
-            {{category}}
-          </a>
-        {% unless forloop.last %}&nbsp;{% endunless %}
-        {% endfor %}
-      </div>
+      {% include post_categories.html %}
 
       <div class="post-meta">{{ post.date | date: date_format }}</div>
 
