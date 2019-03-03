@@ -49,4 +49,4 @@ Here is an elegant way to achieve this.
 
 # **References**
 
-- [How to display {% raw %} and {% endraw %} using markdown?](https://stackoverflow.com/questions/47106191/how-to-display-raw-and-endraw-using-markdown#answer-47106519){:target="_blank"}
+- [How to display {% raw %}{%{% endraw %} raw %} and {% raw %}{%{% endraw %} endraw %} using markdown?](https://stackoverflow.com/questions/47106191/how-to-display-raw-and-endraw-using-markdown#answer-47106519){:target="_blank"}
