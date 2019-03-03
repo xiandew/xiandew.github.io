@@ -30,6 +30,43 @@ a:hover {
   color: #ffffff;
 }
 
+.site-nav {
+  float: left;
+}
+
+.search {
+  float: right;
+  line-height: 54px;
+  width: 35%;
+}
+.search input {
+  width: 100%;
+  padding: 0.45rem;
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+  border-radius: 0.25rem;
+  letter-spacing: .034em;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+.search ul {
+  margin: -0.5rem 0 0 0;
+  z-index: 999;
+  position: absolute;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 1px 3px rgba(0,37,55,.06);
+  box-sizing: border-box;
+  background: white;
+  padding: 0.5rem;
+  line-height: 1.3;
+  display: none;
+}
+.search li {
+  line-height: 1.3;
+  list-style: none;
+  margin-bottom: .5rem;
+  font-size: .9rem;
+}
+
 .categories {
   margin-bottom: 30px;
 }
@@ -59,7 +96,7 @@ a:hover {
   box-shadow: 0 1px 3px rgba(0,37,55,.06);
 }
 .post-content {
-    margin-bottom: 5rem;
+  margin-bottom: 5rem;
 }
 .post-title {
   margin: 0;
@@ -69,13 +106,17 @@ a:hover {
   line-height: 1.3;
   letter-spacing: inherit;
 }
+.post-list .post-title {
+  font-size: 1.8rem;
+}
 .post .post-title {
   margin-top: 30px;
 }
 .post-link {
   color: #4e4e4e;
-  display: table;
+  font-size: inherit;
   font-weight: bold;
+  display: inline;
 }
 .post-link:hover {
   color:#686868;
@@ -114,7 +155,7 @@ blockquote {
   border-left: .25em solid #dfe2e5;
   padding: 0 1em;
   font-size: 0.95rem;
-  letter-spacing: .034rem;
+  letter-spacing: .2px;
   font-style: normal;
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
   color: #6a737d;
