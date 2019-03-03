@@ -10,7 +10,7 @@
 
   {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
-      <em>{{ page }}</em>
+      <b>{{ page }}</b>
     {% elsif page == 1 %}
       <a href="{{ site.url | relative_url }}">
         {{ page }}

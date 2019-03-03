@@ -29,6 +29,7 @@ paginate_path: "/page:num"
 twitter_username: xiande123
 github_username:  xiandew
 linkedin_username: 贤德-温-aa4139140
+rss: Subscribe via RSS
 
 # Disqus Comments
 disqus:
