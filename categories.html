@@ -4,20 +4,34 @@ permalink: /categories/
 title: Categories
 ---
 
-<div id="archives">
-{% for category in site.categories %}
-  <div class="archive-group">
+<div class="categories">
+  {% for category in site.categories %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
-    <p></p>
+    <a class="category_name" href="{{'/categories/#' | prepeand: site.url | append: category_name | relative_url }}">
+      {{ category_name }}
+    </a>
+  {% unless forloop.last %}&nbsp;{% endunless %}
+  {% endfor %}
+</div>
 
-    <h3 class="category-head">{{ category_name }}</h3>
-    <a name="{{ category_name | slugize }}"></a>
-    {% for post in site.categories[category_name] %}
-    <article class="archive-item">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-    </article>
-    {% endfor %}
-  </div>
-{% endfor %}
+<div id="archives">
+  {% for category in site.categories %}
+    <div class="archive-group">
+      {% capture category_name %}{{ category | first }}{% endcapture %}
+
+      <div id="{{ category_name | slugize }}">
+        <h3 class="category-head">{{ category_name }}</h3>
+      </div>
+
+      {% for post in site.categories[category_name] %}
+      <article class="archive-item">
+        <h4>
+          <a href="{{ site.url | append: post.url | relative_url }}">
+            {{post.title}}
+          </a>
+        </h4>
+      </article>
+      {% endfor %}
+    </div>
+  {% endfor %}
 </div>
