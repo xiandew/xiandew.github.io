@@ -6,23 +6,52 @@ body {
 a {
   transition: color .1s linear, background-color .1s linear, opacity .1s linear;
 }
+a:hover {
+  text-decoration: none;
+  box-shadow: 0 1px 0 0 currentColor;
+}
 
 .site-header {
   border-top: none;
 }
 .site-title-wrapper {
-  border-bottom: 1px solid #e8e8e8;
+  background-image: url("/assets/img/circuitBoard.svg");
+  background-color: #1494fb;
   padding: 2.5rem 0;
 }
 .site-title {
-  display: block;
   float: none;
   letter-spacing: inherit;
   font-weight: bold;
   font-size: 2.25rem;
+  color: #ffffff;
+}
+.site-title:hover {
+  color: #ffffff;
 }
 
-.post-list li {
+.categories {
+  margin-bottom: 30px;
+}
+.categories a {
+  margin-bottom: 10px;
+}
+.category_name {
+  display: inline-block;
+	padding: 0 8px;
+	font-size: 14px;
+	border-radius: 2px;
+	background-color: #fafafa;
+  border: 1px solid #fafafa;
+  box-sizing: border-box;
+  color: #828282;
+}
+.category_name:hover {
+  box-shadow: none;
+  border: 1px solid currentColor;
+}
+
+.categories, .post-list li {
   padding: 30px 20px;
   border: 1px solid #e7eaf1;
   border-radius: 3px;
@@ -31,9 +60,6 @@ a {
 }
 .post-content {
     margin-bottom: 5rem;
-}
-.post-meta {
-  margin-top: 10px;
 }
 .post-title {
   margin: 0;
@@ -50,11 +76,15 @@ a {
 }
 .post-link:hover {
   color:#686868;
-  text-decoration: none;
-  box-shadow: 0 1px 0 0 currentColor;
 }
 .post-excerpt {
   margin: 10px 0;
+}
+.post-categories {
+  display: inline-block;
+}
+.post-meta {
+  float: right;
 }
 
 .contact {

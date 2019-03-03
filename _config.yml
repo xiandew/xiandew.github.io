@@ -23,7 +23,7 @@ url: "https://xiandew.github.io/" # the base hostname & protocol for your site, 
 
 #permalink: /:categories/:title/
 excerpt_separator: <!--more-->
-paginate: 5
+paginate: 8
 paginate_path: "/page:num"
 
 twitter_username: xiande123
