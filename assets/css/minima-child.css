@@ -131,6 +131,16 @@ a:hover {
   float: right;
 }
 
+.pagination * {
+  margin-right: 1rem;
+  border: 1px solid;
+  padding: 0.05rem 0.6rem;
+  border-radius: 0.2rem;
+}
+.pagination a {
+  box-shadow: none;
+}
+
 .contact {
   float: none;
 }
