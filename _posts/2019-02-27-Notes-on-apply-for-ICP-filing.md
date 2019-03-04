@@ -61,6 +61,5 @@ existed ICP filing could be revoked and you probably need to apply for another o
 
 # **References**
 
-[ICP license - wikipedia](https://en.wikipedia.org/wiki/ICP_license){:target='_blank'}
-
-[阿里云备案](https://www.aliyunbaike.com/beian/){:target='_blank'}
+- [ICP license - wikipedia](https://en.wikipedia.org/wiki/ICP_license){:target='_blank'}
+- [阿里云备案](https://www.aliyunbaike.com/beian/){:target='_blank'}

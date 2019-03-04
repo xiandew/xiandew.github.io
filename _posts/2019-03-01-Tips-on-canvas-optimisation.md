@@ -157,7 +157,7 @@ context.stroke();
 - Be careful with heavy physics libraries.
 
 # **References**
-[Improving HTML5 Canvas Performance](https://www.html5rocks.com/en/tutorials/canvas/performance/){:target='_blank'}
-[Optimizing canvas - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas){:target='_blank'}
-[ Optimising HTML5 Canvas games](https://nicolahibbert.com/optimising-html5-canvas-games/){:target='_blank'}
-[提高HTML5 canvas性能的几种方法！](https://my.oschina.net/aaronzh/blog/132346){:target='_blank'}
+- [Improving HTML5 Canvas Performance](https://www.html5rocks.com/en/tutorials/canvas/performance/){:target='_blank'}
+- [Optimizing canvas - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas){:target='_blank'}
+- [ Optimising HTML5 Canvas games](https://nicolahibbert.com/optimising-html5-canvas-games/){:target='_blank'}
+- [提高HTML5 canvas性能的几种方法！](https://my.oschina.net/aaronzh/blog/132346){:target='_blank'}
