@@ -1,6 +1,6 @@
 ---
   layout: post
-  title: Things to be done after installing wordpress
+  title: Resolve failure of updating wordpress
   tags:
   categories:
     - PHP
