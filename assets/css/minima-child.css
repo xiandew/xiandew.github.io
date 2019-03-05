@@ -141,7 +141,7 @@ a:visited {
   border-radius: 0.2rem;
 }
 .pagination a:visited {
-  color: unset;
+  color: #2a7ae2;
 }
 .pagination a {
   box-shadow: none;
