@@ -10,6 +10,9 @@ a:hover {
   text-decoration: none;
   box-shadow: 0 1px 0 0 currentColor;
 }
+a:visited {
+  color: currentColor;
+}
 
 .site-header {
   border-top: none;
@@ -26,7 +29,7 @@ a:hover {
   font-size: 2.25rem;
   color: #ffffff;
 }
-.site-title:hover {
+.site-title:hover, .site-title:visited {
   color: #ffffff;
 }
 
@@ -137,6 +140,9 @@ a:hover {
   padding: 0.05rem 0.6rem;
   border-radius: 0.2rem;
 }
+.pagination a:visited {
+  color: #2a7ae2;
+}
 .pagination a {
   box-shadow: none;
 }
@@ -154,10 +160,10 @@ a:hover {
   box-shadow: none;
 }
 .social-media-list a:hover .svg-icon {
-    fill: #2a7ae2;
+  fill: #2a7ae2;
 }
 .social-media-list span {
-    display: none;
+  display: none;
 }
 
 blockquote {
