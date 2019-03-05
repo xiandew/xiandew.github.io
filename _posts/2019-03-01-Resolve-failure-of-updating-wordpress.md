@@ -8,3 +8,4 @@
 ---
 
 max_exe_time
+https://wordpress.stackexchange.com/questions/224989/get-rid-of-another-update-is-currently-in-progress
