@@ -10,9 +10,6 @@ a:hover {
   text-decoration: none;
   box-shadow: 0 1px 0 0 currentColor;
 }
-a:focus {
-	outline: thin dotted;
-}
 a:visited {
   color: currentColor;
 }
@@ -160,10 +157,10 @@ a:visited {
   box-shadow: none;
 }
 .social-media-list a:hover .svg-icon {
-    fill: #2a7ae2;
+  fill: #2a7ae2;
 }
 .social-media-list span {
-    display: none;
+  display: none;
 }
 
 blockquote {
