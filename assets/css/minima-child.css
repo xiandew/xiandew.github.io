@@ -140,6 +140,9 @@ a:visited {
   padding: 0.05rem 0.6rem;
   border-radius: 0.2rem;
 }
+.pagination a:visited {
+  color: unset;
+}
 .pagination a {
   box-shadow: none;
 }
