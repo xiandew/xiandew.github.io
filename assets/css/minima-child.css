@@ -170,3 +170,31 @@ blockquote {
   color: #6a737d;
   margin-bottom: 16px;
 }
+
+@media screen and (max-width: 600px) {
+  .site-title-wrapper {
+    padding: 1.5rem 0;
+  }
+  .site-nav {
+    top: 2rem;
+  }
+  .search {
+    width: 100%;
+  }
+  .post-list li {
+    padding: 10px;
+  }
+  .post-list .post-title {
+    font-size: 1.2rem;
+  }
+  .post .post-title {
+    font-size: 1.8rem;
+  }
+  .post-meta {
+    float: none;
+    padding-top: 10px;
+  }
+  .pagination .page-i {
+    display: none;
+  }
+}

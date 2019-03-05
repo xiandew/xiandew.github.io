@@ -12,9 +12,9 @@
     {% if page == paginator.page %}
       <b>{{ page }}</b>
     {% elsif page == 1 %}
-      <a href="{{ site.url | relative_url }}">{{ page }}</a>
+      <a class="page-i" href="{{ site.url | relative_url }}">{{ page }}</a>
     {% else %}
-      <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+      <a class="page-i" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
     {% endif %}
   {% endfor %}
 
