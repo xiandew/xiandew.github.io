@@ -11,3 +11,5 @@ centos7 firewall-cmd查看端口是否开放及开放端口
 https://blog.csdn.net/y534560449/article/details/65629697
 
 firewall-cmd --permanent --zone=public --add-port=443/tcp
+
+https://www.thegeekdiary.com/5-useful-examples-of-firewall-cmd-command/
