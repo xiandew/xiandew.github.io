@@ -147,6 +147,9 @@ a:visited {
   box-shadow: none;
 }
 
+.footer-col-wrapper {
+  color: inherit;
+}
 .contact {
   float: none;
 }
