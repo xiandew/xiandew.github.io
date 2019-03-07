@@ -8,12 +8,13 @@
 
 > Creativity loves constraints and simplicity is at our core. Tweets are limited to 140 characters so they can be consumed easily anywhere, even via mobile text messages. There’s no magical length for a Tweet, but a recent report by Buddy Media revealed that Tweets shorter than 100 characters get a 17% higher engagement rate.
 
-The pagination functionality is very common for blog website. Blog pages with long
-list can be very annoying sometimes hence users will have uncomfortable browsing
-experience. Perfect page length does not only bring confortabiliy to users but also
-shows a clear web page structure.
+From the above lines, you probably feel that the length of your webpage is important
+for a better user experience. Blog pages with long list can be very annoying.
+Perfect page length does not only bring confortabiliy to users but also
+shows a clear web page structure. That's why the pagination is necessary for
+a blog website.
 
-Here is how to implement.
+Here is how to implement with Jekyll.
 
 # **Get started**
 
