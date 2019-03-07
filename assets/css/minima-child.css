@@ -150,6 +150,9 @@ a:visited {
 .contact {
   float: none;
 }
+.contact-list a {
+  box-shadow: none;
+}
 .social {
   display: block;
 }
