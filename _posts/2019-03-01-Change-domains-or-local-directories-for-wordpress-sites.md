@@ -7,7 +7,6 @@
     - WordPress
 ---
 
-https://techjourney.net/how-to-move-wordpress-blog-to-new-domain-or-location-directory/
 
 
 # **Step 1**
@@ -19,3 +18,4 @@ then it should be changed and running.
 
 # **References**
 - [Change the folder name for the directory WordPress is installed in - Stack overflow](https://stackoverflow.com/questions/8425042/change-the-folder-name-for-the-directory-wordpress-is-installed-in#answer-43471683){:target='_blank'}
+- [How to Move WordPress Blog to New Domain or Location / Directory](https://techjourney.net/how-to-move-wordpress-blog-to-new-domain-or-location-directory/){:target='_blank'}
