@@ -15,7 +15,7 @@ Here is some steps to display categories in Jekyll.
 # **Display categories for each Post**
 
 The following piece of code shows categories for each post and also have links points to
-all posts within that category.
+all posts within that category. You can place this code anywhere you like.
 
 {% highlight html %}
 {% raw %}
@@ -34,6 +34,11 @@ all posts within that category.
 {% endhighlight %}
 
 # **A category page**
+
+Create a file called `categories.html` under your root of the blog website and
+paste the following code in.
+
+> The page will look like this. It will have all the categories listed out. One article can be listed in many categories. This happens when you use more than one category for a post.
 
 {% highlight html %}
 {% raw %}
