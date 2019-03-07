@@ -11,13 +11,13 @@
 
 Certbot can be configured to renew your certificates automatically before they expire. Since Let's Encrypt certificates last for 90 days, it's highly advisable to take advantage of this feature. You can test automatic renewal for your certificates by running this command:
 
-```
-$ sudo certbot renew --dry-run
+```bash
+certbot renew --dry-run
 ```
 
 If that appears to be working correctly, you can arrange for automatic renewal by adding a `cron job` or `systemd` timer which runs the following:
 
-```
+```bash
 certbot renew
 ```
 
@@ -31,7 +31,7 @@ random minute within the hour for your renewal tasks.
 
 An example cron job might look like this, which will run at noon and midnight every day:
 
-```
+```bash
 0 0,12 * * * python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew
 ```
 
