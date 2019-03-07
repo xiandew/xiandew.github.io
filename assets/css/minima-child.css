@@ -172,6 +172,10 @@ a:visited {
   display: none;
 }
 
+.archive-item a:visited {
+  color: #2a7ae2;
+}
+
 blockquote {
   border-left: .25em solid #dfe2e5;
   padding: 0 1em;
