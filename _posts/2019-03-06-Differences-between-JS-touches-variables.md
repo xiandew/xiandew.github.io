@@ -6,11 +6,11 @@
     - JavaScript
 ---
 
-There three common touches variables in JS that is `touches`, `targetTouches`
+There are three common touches variables in JS, which is `touches`, `targetTouches`
 and `changedTouches` when developing JS applications. Sometimes you can achieve
 the same effects without regarding what they represent. However, when your design
-involves frequent touching interactions with users, things can be complex and
-messy if you do not take care when using different variables.
+involves massive touching interactions with users, things can be complex and
+messy if you do not take care when to use each `touches` variables.
 
 Here are the definations of these touches variables and hope you can get a sense of
 how they are differed from each other and when should each be used.
