@@ -7,10 +7,10 @@
     - JavaScript
 ---
 
-When writing games with canvas, the frame rate matters the most if the game
-requires many animation effects. So how to optimising the efficiency and
-improve the frame rate is always an important aspect to consider along canvas
-game development. I found the following tips are pretty usefull when doing
+When developing games with canvas, the frame rate matters the most if the game
+requires many animation effects. So optimising the efficiency and
+improving the frame rate are always important aspects to consider along canvas
+game development. I found the following tips are particularly useful for doing
 canvas optimisation.
 
 
