@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Guess The Word</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="words.js"></script>
+    <script src="wordGuessingGame.js"></script>
+</head>
+
+<body>
+
+    <p>Enter your guess</p>
+    <form onsubmit="check(); return false;">
+        <div id="wordTiles"></div>
+        <button id="submit">Submit</button>
+    </form>
+    <p>Game board</p>
+    <hr>
+    <div id="gameboard">
+        <div>
+            <span>Your CurrentScore</span>
+            <span id="yourCurrentScore">000</span>
+        </div>
+        <div>
+            <span>Incorrect Guesses</span>
+            <span id="incorrectGuesses">000</span>
+        </div>
+        <div>
+            <span>Remaining Guesses</span>
+            <span id="remainingGuesses">010</span>
+        </div>
+    </div>
+    <hr>
+    <script>
+        $( document ).ready(reset());
+    </script>
+</body>
+</html>

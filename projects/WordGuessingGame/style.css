@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+}
+
+input {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#submit {
+    height: 2rem;
+    margin: 2rem 0;
+    padding: 0 2rem;
+    border-radius: 1rem;
+}
+
+#gameboard {
+    font-family: Consolas;
+}
