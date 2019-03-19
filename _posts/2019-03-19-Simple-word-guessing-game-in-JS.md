@@ -6,4 +6,4 @@
     - JavaScript
 ---
 
-https://xiandew.github.io/projects/WordGuessingGame/index.html
+Play it [here](https://xiandew.github.io/projects/WordGuessingGame/index.html){:target="_blank"}
