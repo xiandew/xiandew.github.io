@@ -6,4 +6,4 @@
     - JavaScript
 ---
 
-Play it [here](https://xiandew.github.io/projects/WordGuessingGame/index.html){:target="_blank"}.
+Play it [here]({{ site.url | append: '/projects/WordGuessingGame/index.html' }}){:target="_blank"}.
