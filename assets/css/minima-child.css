@@ -10,9 +10,6 @@ a:hover {
   text-decoration: none;
   box-shadow: 0 1px 0 0 currentColor;
 }
-a:visited {
-  color: currentColor;
-}
 
 .site-header {
   border-top: none;
@@ -116,13 +113,15 @@ a:visited {
   margin-top: 30px;
 }
 .post-link {
-  color: #4e4e4e;
   font-size: inherit;
   font-weight: bold;
   display: inline;
 }
+.post-link:visited {
+  color: #2a7ae2;
+}
 .post-link:hover {
-  color:#686868;
+  color: #686868;
 }
 .post-excerpt {
   margin: 10px 0;
