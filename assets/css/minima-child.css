@@ -151,7 +151,7 @@ a:hover {
 }
 .contact-list {
   display: inline-block;
-  padding-right: 1rem;
+  margin-right: 1rem;
 }
 .contact-list span, .social span {
   display: none;
@@ -173,7 +173,8 @@ a:hover {
   box-shadow: none;
 }
 .svg-icon {
-  padding-right: 1rem;
+  margin-right: 1rem;
+  padding: 0;
 }
 .social-media-list a:hover .svg-icon {
   fill: #2a7ae2;
