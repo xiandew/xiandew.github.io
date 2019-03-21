@@ -189,10 +189,10 @@ a:hover {
 blockquote {
   border-left: .25em solid #dfe2e5;
   padding: 0 1em;
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   letter-spacing: .2px;
   font-style: normal;
-  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-family: Times;
   color: #6a737d;
   margin-bottom: 16px;
 }
