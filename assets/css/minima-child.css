@@ -11,7 +11,7 @@ a:hover {
   box-shadow: 0 1px 0 0 currentColor;
 }
 a:visited {
-  color: currentColor;
+  color: #2a7ae2;
 }
 
 .site-header {
