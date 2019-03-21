@@ -6,10 +6,7 @@
     - git
 ---
 
-I am studying COMP30020 Computer systems, one of the unimelb core subjects for
-computer science. As one of its lab tasks, working with the unimelb gitlab is pretty
-straightforward by following the spec. However, some details may require our attentions
-to avoid unnecessary scratches. You can find the lab spec from [here](https://www.dropbox.com/s/2pfaj1uvypk29y1/lab-3.pdf?dl=0){:target="_blank"}.
+This semester, I am doing the subject COMP30020 Computer systems which is one of the unimelb core subjects for computer science. As one of its lab tasks, working with the unimelb gitlab is pretty straightforward by following the spec. However, some details may require our attentions to avoid unnecessary scratches. You can find the lab spec from [here](https://www.dropbox.com/s/2pfaj1uvypk29y1/lab-3.pdf?dl=0){:target="_blank"}.
 
 One problem that I have encountered is as following. By the way, I am using Windows
 which means that situations may be different from unix-based systems.
