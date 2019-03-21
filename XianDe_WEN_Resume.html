@@ -9,6 +9,7 @@
             max-width: 960px;
             font-size: 1.2rem;
             margin: 0 auto;
+            padding: 0 4%;
         }
 
         a {
@@ -23,6 +24,23 @@
         section {
             display: block;
             margin: 1rem 0;
+        }
+
+        .heading {
+          width: 80%;
+          display: inline-block;
+        }
+
+        .photo {
+          float: right;
+          background-color: white;
+          width: 120px;
+          padding-left: 1rem;
+          margin-top: -10px;
+        }
+
+        .photo img {
+          width: 100%;
         }
 
         .header {
@@ -98,22 +116,29 @@
             float: right;
         }
 
-        @media screen and (max-width: 800px) {
-            body {
-                padding: 0 4%;
-            }
-
+        @media screen and (max-width: 960px) {
             section {
                 margin: 2rem 0;
             }
-
+            ul {
+                padding: 0 1.25rem;
+            }
             li{
                 margin:  0.5rem 0;
             }
 
+            .heading {
+                width: 70%;
+                margin-bottom: 0;
+            }
             .heading * {
-                display: table;
+                display: block;
+            }
 
+            .photo {
+                max-width: 130px;
+                display: inline-block;
+                margin-top: 1rem;
             }
 
             .name {
@@ -123,6 +148,7 @@
             .contact-detail {
                 width: 100%;
                 box-sizing: border-box;
+                padding: 0;
             }
 
             .bachelor {
@@ -156,6 +182,17 @@
                 padding: 0 1rem;
             }
         }
+        @media screen and (max-width: 500px) {
+            .heading {
+                width: 100%;
+            }
+            .photo {
+                margin: 0 auto;
+                display: block;
+                float: none;
+                padding: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -169,6 +206,10 @@
         </ul>
     </div>
     <div style="clear: both;"></div>
+</section>
+
+<section class="photo">
+  <img src="./XianDe_WEN.jpg">
 </section>
 
 <section>

@@ -113,13 +113,15 @@ a:hover {
   margin-top: 30px;
 }
 .post-link {
-  color: #2a7ae2;
   font-size: inherit;
   font-weight: bold;
   display: inline;
 }
+.post-link:visited {
+  color: #2a7ae2;
+}
 .post-link:hover {
-  color:#686868;
+  color: #686868;
 }
 .post-excerpt {
   margin: 10px 0;
