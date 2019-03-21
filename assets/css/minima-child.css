@@ -11,7 +11,7 @@ a:hover {
   box-shadow: 0 1px 0 0 currentColor;
 }
 a:visited {
-  color: #2a7ae2;
+  color: currentColor;
 }
 
 .site-header {
@@ -116,7 +116,7 @@ a:visited {
   margin-top: 30px;
 }
 .post-link {
-  color: #4e4e4e;
+  color: #2a7ae2;
   font-size: inherit;
   font-weight: bold;
   display: inline;
