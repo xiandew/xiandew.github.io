@@ -168,12 +168,12 @@ a:hover {
 }
 .social-media-list li {
   display: inline;
+  margin-right: 1rem;
 }
 .social-media-list a {
   box-shadow: none;
 }
 .svg-icon {
-  margin-right: 1rem;
   padding: 0;
 }
 .social-media-list a:hover .svg-icon {
