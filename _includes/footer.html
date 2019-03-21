@@ -4,32 +4,40 @@
   <div class="wrapper">
 
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1 contact">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-          </li>
+      <div class="footer-col">
+          <span class="p-name">
+          {%- if site.author -%}
+            {{ site.author | escape }}
+          {%- else -%}
+            {{ site.title | escape }}
+          {%- endif -%}
+          </span>
+          <p>
+            I am currently a third year student at University of Melbourne.
+            I love programming, working, being with friends and sleeping😁.
+            More about me, click
+            <a href="{{ site.url | append: '/XianDe_WEN_Resume.html' }}" target="_blank">
+              here
+            </a>.
+          </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="contact-list">
           {%- if site.email -%}
           <span>Email</span>
-          <li>
-            <a class="u-email" href="mailto:{{ site.email }}">
-              <i class="fa fa-envelope"></i>
-            </a>
-          </li>
+          <a class="u-email" href="mailto:{{ site.email }}">
+            <i class="fa fa-envelope"></i>
+          </a>
           {%- endif -%}
-        </ul>
+        </div>
+        <div class="social">
+          <span>Social</span>
+          {%- include social.html -%}
+        </div>
       </div>
-    </div>
 
-    <div class="social">
-      <span>Social</span>
-      {%- include social.html -%}
     </div>
-    
   </div>
 
 </footer>

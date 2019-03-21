@@ -149,14 +149,22 @@ a:hover {
 .footer-col-wrapper {
   color: inherit;
 }
-.contact {
-  float: none;
+.contact-list {
+  display: inline-block;
+  padding-right: 1rem;
+}
+.contact-list span, .social span {
+  display: none;
 }
 .contact-list a {
   box-shadow: none;
 }
 .social {
-  display: block;
+  display: inline-block;
+}
+.social-media-list {
+  display: inline-block;
+  margin: 0;
 }
 .social-media-list li {
   display: inline;
@@ -164,11 +172,14 @@ a:hover {
 .social-media-list a {
   box-shadow: none;
 }
+.svg-icon {
+  padding-right: 1rem;
+}
 .social-media-list a:hover .svg-icon {
   fill: #2a7ae2;
 }
-.social-media-list span {
-  display: none;
+.p-name, .contact-list span, .social span {
+  font-weight: bold;
 }
 
 .archive-item a:visited {
