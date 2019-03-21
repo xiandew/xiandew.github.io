@@ -18,10 +18,9 @@ half its letters are chosen randomly to be hidden for the player to guess.
 You can find all words [here](https://github.com/xiandew/WordGuessingGame/blob/master/words.js){:target="_blank"}.
 
 Three components are recorded in the game board.
+
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Your current score | Initially zero and will be incremented by one if you guess one word right.                                                                                                                                                                |
 | Incorrect guesses  | Initially zero and incremented by one when you submited a worng answer.                                                                                                                                                                   |
 | Remaining guesses  | Initially ten and decremented by one when you submited a wrong answer. The game is meant to be over when no remaining guesses are left. And at that time, the game board will be resumed to the current state and a new game is restarted |
-|                    |                                                                                                                                                                                                                                           |
-|                    |                                                                                                                                                                                                                                           |
