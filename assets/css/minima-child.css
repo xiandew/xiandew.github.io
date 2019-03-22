@@ -201,6 +201,15 @@ blockquote {
   .site-nav {
     top: 2rem;
   }
+  .site-nav .page-link {
+    display: block;
+    padding: 5px 30px;
+    margin: 0;
+  }
+  .site-nav .page-link:hover {
+    box-shadow: none;
+    background: #eeeeee;
+  }
   .search {
     width: 100%;
   }
