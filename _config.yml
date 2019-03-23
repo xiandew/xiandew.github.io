@@ -21,11 +21,11 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://xiandew.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-#permalink: /:categories/:title/
 excerpt_separator: <!--more-->
 paginate: 8
 paginate_path: "/page:num"
 
+resume_url: "/resume/XianDe_WEN.html"
 twitter_username: xiande123
 github_username:  xiandew
 linkedin_username: 贤德-温-aa4139140
