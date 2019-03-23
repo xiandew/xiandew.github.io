@@ -1,0 +1,193 @@
+body {
+    font-family: Times;
+    max-width: 960px;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+a {
+    max-width: 100%;
+    word-wrap: anywhere;
+}
+
+ul {
+    padding: 0 1rem;
+}
+
+section {
+    display: block;
+    margin: 1rem 0;
+}
+
+.heading {
+  width: 80%;
+  display: inline-block;
+}
+
+.photo {
+  float: right;
+  background-color: white;
+  width: 120px;
+  padding-left: 1rem;
+  margin-top: -10px;
+}
+
+.photo img {
+  width: 100%;
+}
+
+.header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+
+.key-coursework {
+    margin: 0;
+    list-style: none;
+    padding: 0 2.5rem;
+}
+
+.key-coursework span {
+    padding-right: 5rem;
+    width: 8rem;
+    display: inline-block;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.title span {
+    padding-right: 2rem;
+    font-size: 1.5rem;
+}
+
+.title a {
+    font-weight: normal;
+}
+
+.sub-title {
+    font-style: italic;
+}
+
+.sub-title span {
+    font-weight: bold;
+}
+
+.sub-title time {
+    float: right;
+}
+
+.jobs {
+    margin-top: 0;
+}
+
+.name {
+    float: left;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.contact-detail {
+    float: right;
+    margin: 0;
+    list-style: none;
+    font-weight: bold;
+}
+
+.bachelor span {
+    font-weight: bold;
+}
+
+.bachelor time {
+    font-style: italic;
+    float: right;
+}
+
+.uni-name {
+    font-style: italic;
+}
+
+.uni-loc {
+    float: right;
+}
+
+@media screen and (max-width: 960px) {
+    section {
+        margin: 2rem 0;
+    }
+    ul {
+        padding: 0 1.25rem;
+    }
+    li{
+        margin:  0.5rem 0;
+    }
+
+    .heading {
+        width: 70%;
+        margin-bottom: 0;
+    }
+    .heading * {
+        display: block;
+    }
+
+    .photo {
+        max-width: 130px;
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    .name {
+        margin-bottom: 2rem;
+    }
+
+    .contact-detail {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .bachelor {
+        margin-bottom: 1rem;
+    }
+
+    .bachelor time, .uni-loc {
+        float: none;
+        display: block;
+    }
+
+    .key-coursework span {
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    .title span {
+        display: block;
+    }
+
+    .sub-title {
+        margin-bottom: 1rem;
+    }
+
+    .sub-title time {
+        float: none;
+        display: block;
+    }
+
+    .key-coursework {
+        padding: 0 1rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .heading {
+        width: 100%;
+    }
+    .photo {
+        margin: 0 auto;
+        display: block;
+        float: none;
+        padding: 0;
+    }
+}
