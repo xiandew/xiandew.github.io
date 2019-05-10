@@ -1,0 +1,162 @@
+body {
+    font-family: Times;
+    font-size: 1.2rem;
+}
+
+a {
+    max-width: 100%;
+    word-wrap: anywhere;
+}
+
+ul {
+    padding: 0 1rem;
+}
+
+section {
+    display: block;
+    margin: 1rem 0;
+}
+
+.heading {
+  width: 80%;
+  display: inline-flex;
+}
+
+.photo {
+  float: right;
+  background-color: inherit;
+  width: 150px;
+  padding-left: 1rem;
+  margin-top: -10px;
+  display: inline-flex;
+}
+
+.photo img {
+  width: 100%;
+}
+
+.header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+
+.key-coursework {
+    padding: 0 2.5rem;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+.title a {
+    font-weight: normal;
+    font-size: 80%;
+}
+
+.sub-title span {
+    font-weight: bold;
+}
+
+.sub-title small {
+    font-style: italic;
+    float: right;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.contact-detail {
+    float: right;
+    margin: 0;
+    list-style: none;
+    font-weight: bold;
+}
+
+.uni-name {
+    font-style: italic;
+}
+
+.uni-loc {
+    float: right;
+}
+
+@media screen and (max-width: 992px) {
+    section {
+        margin: 2rem 0;
+    }
+    ul {
+        padding: 0 1.25rem;
+    }
+    li{
+        margin:  0.5rem 0;
+    }
+
+    .heading {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .heading * {
+        display: block;
+    }
+
+    .photo {
+        max-width: 130px;
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    .name {
+        margin-bottom: 2rem;
+    }
+
+    .contact-detail {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .bachelor {
+        margin-bottom: 1rem;
+    }
+
+    .bachelor time, .uni-loc {
+        float: none;
+        display: block;
+    }
+
+    .key-coursework span {
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    .title span {
+        display: block;
+    }
+
+    .sub-title {
+        margin-bottom: 1rem;
+    }
+
+    .sub-title time {
+        float: none;
+        display: block;
+    }
+
+    .key-coursework {
+        padding: 0 1rem;
+    }
+}
+@media screen and (max-width: 576px) {
+    .heading {
+        width: 100%;
+    }
+    .photo {
+        margin: 0 auto;
+        display: block;
+        float: none;
+        padding: 0;
+    }
+}
