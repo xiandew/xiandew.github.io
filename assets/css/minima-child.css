@@ -67,6 +67,10 @@ a:hover {
   font-size: .9rem;
 }
 
+.page-content {
+    flex: none;
+}
+
 .categories {
   margin-bottom: 30px;
 }
