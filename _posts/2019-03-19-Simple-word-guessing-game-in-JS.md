@@ -6,7 +6,7 @@
     - JavaScript
 ---
 
-You can play it [here]({{ site.url | append: '/projects/WordGuessingGame/index.html' }}){:target="_blank"}.
+You can play it [here]({{ site.url | append: '/projects/GuessTheWord/index.html' }}){:target="_blank"}.
 
 # **Specification**
 
