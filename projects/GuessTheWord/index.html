@@ -5,9 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="words.js"></script>
-    <script src="wordGuessingGame.js"></script>
+    <script src="main.js"></script>
+    <script src="utils.js"></script>
+    <script>
+        window.onload = function() {
+            reset();
+            document.getElementById('wordTiles').onkeyup = autofocus;
+        }
+    </script>
 </head>
 
 <body>
@@ -34,8 +40,5 @@
         </div>
     </div>
     <hr>
-    <script>
-        $( document ).ready(reset());
-    </script>
 </body>
 </html>

@@ -83,17 +83,6 @@ function checkEndOfGame(){
     }
 }
 
-function reset () {
-    // reset the game (set new word to be guessed, clean word tiles, incorrect
-    // guesses and remaining guesses)
-    setWord();
-    updateGameState({
-        "yourCurrentScore": 0,
-        "incorrectGuesses": 0,
-        "remainingGuesses": 10
-    });
-}
-
 function updateGameState(data) {
     for (let attr in data) {
         gameState[attr] = data[attr];
@@ -103,4 +92,15 @@ function updateGameState(data) {
 
 function padding(num, length) {
     return (Array(length).join("0") + num).slice(-length);
+}
+
+function reset () {
+    // reset the game (set new word to be guessed, clean word tiles, incorrect
+    // guesses and remaining guesses)
+    setWord();
+    updateGameState({
+        "yourCurrentScore": 0,
+        "incorrectGuesses": 0,
+        "remainingGuesses": 10
+    });
 }
