@@ -28,10 +28,9 @@ paginate: 8
 paginate_path: "/page:num"
 
 resume_url: "/resume/XianDe_WEN.html"
-twitter_username: xiande123
+twitter_username: xiande_wen
 github_username:  xiandew
-linkedin_username: 贤德-温-aa4139140
-rss: Subscribe via RSS
+linkedin_username: xiandew
 
 # Disqus Comments
 disqus:
