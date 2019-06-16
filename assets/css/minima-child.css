@@ -109,6 +109,7 @@ a:hover {
   font-size: 2.5rem;
   line-height: 1.3;
   letter-spacing: inherit;
+  font-family: 'Google Sans',sans-serif;
 }
 .post-list .post-title {
   font-size: 1.5rem;
@@ -188,14 +189,8 @@ a:hover {
 }
 
 blockquote {
-  border-left: .25em solid #dfe2e5;
-  padding: 0 1em;
-  font-size: 1.25rem;
   letter-spacing: .2px;
-  font-style: normal;
-  font-family: Times;
-  color: #6a737d;
-  margin-bottom: 16px;
+  font-size: inherit;
 }
 
 @media screen and (max-width: 600px) {
