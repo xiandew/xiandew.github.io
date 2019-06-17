@@ -4,7 +4,7 @@
   tags:
   categories:
     - PHP
-    - Wordpress
+    - WordPress
 ---
 
 Updating wordpress can be easily done by clicking the buttons. Some people will never

@@ -3,7 +3,7 @@
   title: Notes on working with unimelb gitlab
   tags:
   categories:
-    - git
+    - Git
 ---
 
 This semester, I am doing the subject COMP30020 Computer systems which is one of the unimelb core subjects for computer science. As one of its lab tasks, working with the unimelb gitlab is pretty straightforward by following the spec. However, some details may require our attentions to avoid unnecessary scratches. You can find the lab spec from [here](https://www.dropbox.com/s/2pfaj1uvypk29y1/lab-3.pdf?dl=0){:target="_blank"}.
