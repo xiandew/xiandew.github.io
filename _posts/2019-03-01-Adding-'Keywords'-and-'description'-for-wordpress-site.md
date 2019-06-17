@@ -4,7 +4,7 @@
   tags:
   categories:
     - SEO
-    - Wordpress
+    - WordPress
     - PHP
 ---
 
