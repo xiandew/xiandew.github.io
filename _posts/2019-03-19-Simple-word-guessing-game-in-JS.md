@@ -6,7 +6,7 @@
     - JavaScript
 ---
 
-You can play it [here]({{ site.url | append: '/projects/GuessTheWord/index.html' }}){:target="_blank"}.
+You can play it [here]({{ site.url | append: '/GuessTheWord/' }}){:target="_blank"}.
 
 # **Specification**
 
@@ -15,7 +15,7 @@ than the game itself. Only 50 words are included and answers that are not includ
 in these 50 words are considered to be incorrect. The guessing word is selected randommly from these 50 words repeatedly. And for each guessing word, no more than
 half its letters are chosen randomly to be hidden for the player to guess.
 
-You can find all words [here](https://github.com/xiandew/WordGuessingGame/blob/master/words.js){:target="_blank"}.
+You can find all words [here](https://xiandew.github.io/GuessTheWord/words.js){:target="_blank"}.
 
 Three components are recorded in the game board.
 
