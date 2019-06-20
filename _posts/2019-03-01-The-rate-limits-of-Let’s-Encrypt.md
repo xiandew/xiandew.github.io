@@ -1,6 +1,6 @@
 ---
   layout: post
-  title: The rate limits of 'Let's encrypt'
+  title: The rate limits of Let's Encrypt
   tags:
   categories:
     - SSL
