@@ -11,6 +11,10 @@ a:hover {
   box-shadow: 0 1px 0 0 currentColor;
 }
 
+.site-title, .post-title, .page-link {
+    font-family: 'Google Sans',sans-serif;
+}
+
 .site-header {
   border-top: none;
 }
@@ -108,7 +112,6 @@ a:hover {
   font-size: 2rem;
   line-height: 1.3;
   letter-spacing: inherit;
-  font-family: 'Google Sans',sans-serif;
 }
 .post-list .post-title {
   font-size: 1.5rem;
