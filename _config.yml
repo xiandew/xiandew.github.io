@@ -27,7 +27,7 @@ excerpt_separator: <!--more-->
 paginate: 8
 paginate_path: "/page:num"
 
-resume_url: "/resume_bootstrap/XianDe_WEN.html"
+resume_url: "/resume"
 twitter_username: xiande_wen
 github_username:  xiandew
 linkedin_username: xiandew
