@@ -6,6 +6,9 @@ body {
 a {
     transition: color .1s linear, background-color .1s linear, opacity .1s linear;
 }
+a:visited {
+    color: #1a0dab;
+}
 a:hover {
     text-decoration: none;
     box-shadow: 0 1px 0 0 currentColor;
@@ -126,9 +129,6 @@ a:hover {
     font-size: inherit;
     font-weight: bold;
     display: inline;
-}
-.post-link:visited {
-    color: #1a0dab;
 }
 .post-link:hover {
     color: #686868;
