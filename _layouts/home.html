@@ -20,7 +20,7 @@ layout: default
         </a>
       </h3>
       <p class="post-excerpt">
-        {{ post.excerpt | strip_html | truncatewords: 40 }}
+        {{ post.excerpt | strip_html | truncatewords: 30 }}
       </p>
 
       {% include post_categories.html %}
@@ -32,5 +32,5 @@ layout: default
   </ul>
 
   {% include pagination.html %}
-  
+
 </div>
