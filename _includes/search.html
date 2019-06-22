@@ -1,7 +1,10 @@
 <!-- HTML elements for search -->
 <div class="search">
-  <input type="text" id="search-input" placeholder="Search blog posts..">
-  <ul id="results-container"></ul>
+    <div style="position: relative;">
+        <input type="text" id="search-input" placeholder="Search blog posts..">
+        <i class="fa fa-search"></i>
+    </div>
+    <ul id="results-container"></ul>
 </div>
 
 <script src="{{ '/assets/js/simple-jekyll-search.min.js' | prepend: site.url | relative_url }}"></script>
