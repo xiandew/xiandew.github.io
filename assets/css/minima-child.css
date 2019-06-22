@@ -39,6 +39,7 @@ a:hover {
 
 .site-nav {
     float: left;
+    z-index: 999;
 }
 
 .search {
