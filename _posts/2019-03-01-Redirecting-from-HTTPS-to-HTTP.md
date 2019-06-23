@@ -1,6 +1,6 @@
 ---
   layout: post
-  title: Redirecting from 'https' to 'http'?
+  title: Redirecting from HTTPS to HTTP?
   tags:
   categories:
     - SSL
