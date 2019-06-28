@@ -5,6 +5,7 @@
   categories:
     - PHP
     - Linux
+  excerpt: Install and configure PHP with httpd in Linux
 ---
 
 # **Download PHP package**
