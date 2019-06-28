@@ -6,7 +6,7 @@
     - Linux
 ---
 
-I was trying to deploy a WordPress website on a linux server with no PHP and
+Recently, I was trying to deploy a WordPress website on a linux server with no PHP and
 MySQL pre-installed. Installing packages is easy in Linux but things did not
 go well in my server which only has RAM for 1 GB.
 
