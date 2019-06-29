@@ -92,7 +92,7 @@ a:hover {
     margin-bottom: 30px;
 }
 .categories a {
-    margin-bottom: 10px;
+    margin: 5px 0;
 }
 .category_name {
     display: inline-block;
@@ -113,14 +113,18 @@ a:hover {
 }
 
 .categories, .post-list li {
-    padding: 30px 20px;
+    padding: 1.5rem;
     border: 1px solid #e7eaf1;
-    border-radius: 3px;
+    border-radius: 1rem;
     box-sizing: border-box;
     box-shadow: 0 1px 3px rgba(0,37,55,.06);
 }
+
 .post-content {
     margin-bottom: 5rem;
+}
+.post-content h1 {
+    margin-top: 45px;
 }
 .post-title {
     margin: 0;
@@ -229,6 +233,7 @@ blockquote {
     }
     .post-list li {
         padding: 10px;
+        border-radius: 3px;
     }
     .post-list .post-title {
         font-size: 1.2rem;
