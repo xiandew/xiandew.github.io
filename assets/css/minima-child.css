@@ -1,13 +1,10 @@
 body {
-    letter-spacing: .034em;
+    letter-spacing: .2px;
     font-family: Roboto,arial,sans-serif;
 }
 
 a {
     transition: color .1s linear, background-color .1s linear, opacity .1s linear;
-}
-a:visited {
-    color: #1a0dab;
 }
 a:hover {
     text-decoration: none;
@@ -22,7 +19,6 @@ a:hover {
     border-top: none;
 }
 .site-title-wrapper {
-    background-image: url("/assets/img/circuitBoard.svg");
     background-color: #1494fb;
     padding: 2.5rem 0;
 }
@@ -134,7 +130,7 @@ a:hover {
 }
 .post-link {
     font-size: inherit;
-    font-weight: bold;
+    font-weight: 500;
     display: inline;
 }
 .post-link:hover {
