@@ -92,7 +92,7 @@ a:hover {
     margin-bottom: 30px;
 }
 .categories a {
-    margin-bottom: 10px;
+    margin: 5px 0;
 }
 .category_name {
     display: inline-block;
