@@ -115,7 +115,7 @@ a:hover {
 .categories, .post-list li {
     padding: 1.5rem;
     border: 1px solid #e7eaf1;
-    border-radius: 1rem;
+    border-radius: 0.75rem;
     box-sizing: border-box;
     box-shadow: 0 1px 3px rgba(0,37,55,.06);
 }
@@ -157,6 +157,9 @@ a:hover {
     float: right;
 }
 
+.pagination {
+    text-align: center;
+}
 .pagination * {
     margin-right: 1rem;
     border: 1px solid;
