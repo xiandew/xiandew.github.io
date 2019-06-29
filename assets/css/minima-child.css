@@ -196,11 +196,12 @@ a:hover {
 .social-media-list a {
     box-shadow: none;
 }
-.svg-icon {
+.social-media-list .svg-icon {
     padding: 0;
+    fill: #2a7ae2;
 }
 .social-media-list a:hover .svg-icon {
-    fill: #2a7ae2;
+    fill: #111;
 }
 .p-name, .contact-list span, .social span {
     font-weight: bold;
