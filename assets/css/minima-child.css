@@ -113,7 +113,7 @@ a:hover {
 }
 
 .categories, .post-list li {
-    padding: 30px 20px;
+    padding: 1.5rem;
     border: 1px solid #e7eaf1;
     border-radius: 1rem;
     box-sizing: border-box;
