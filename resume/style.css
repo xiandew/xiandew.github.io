@@ -6,6 +6,9 @@ body {
 a {
     max-width: 100%;
     word-wrap: anywhere;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 ul {
@@ -81,7 +84,11 @@ section {
 .uni-loc {
     float: right;
 }
-
+@media screen and (max-width: 1200px) {
+    .photo {
+        margin: 1rem 0;
+    }
+}
 @media screen and (max-width: 992px) {
     section {
         margin: 2rem 0;
@@ -104,7 +111,7 @@ section {
     .photo {
         max-width: 130px;
         display: inline-block;
-        margin-top: 1rem;
+        margin-top: 0;
     }
 
     .name {
