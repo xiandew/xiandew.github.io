@@ -12,7 +12,16 @@ a:hover {
 }
 
 .site-title, .post-title, .page-link {
-    font-family: 'Google Sans', sans-serif;
+    font-family: Montserrat, sans-serif;
+}
+.site-title {
+    font-weight: bold;
+}
+.post-title {
+    font-weight: 600;
+}
+.page-link {
+    font-weight: 500;
 }
 
 .site-header {
@@ -25,7 +34,6 @@ a:hover {
 .site-title {
     float: none;
     letter-spacing: 0;
-    font-weight: bold;
     font-size: 2.25rem;
     color: #ffffff;
 }
@@ -130,7 +138,6 @@ a:hover {
 }
 .post-link {
     font-size: inherit;
-    font-weight: 500;
     display: inline;
 }
 .post-link:hover {
