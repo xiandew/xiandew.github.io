@@ -207,10 +207,6 @@ a:hover {
     font-weight: bold;
 }
 
-.archive-item a:visited {
-    color: #2a7ae2;
-}
-
 blockquote {
     letter-spacing: .2px;
     font-size: inherit;
