@@ -3,10 +3,6 @@ body {
     font-size: 1.2rem;
 }
 
-#fade {
-    display: none;
-}
-
 a {
     max-width: 100%;
     word-wrap: anywhere;
