@@ -17,10 +17,8 @@ a:hover {
 .site-title {
     font-weight: bold;
 }
-.post-title {
-    font-weight: 600;
-}
-.page-link {
+
+.page-link, .post-title {
     font-weight: 500;
 }
 
@@ -132,7 +130,6 @@ a:hover {
     border-bottom: 1px solid #f1f1f1;
     font-size: 2rem;
     line-height: 1.3;
-    letter-spacing: 0;
 }
 .post-list .post-title {
     font-size: 1.25rem;
