@@ -6,35 +6,32 @@ body {
 a {
     transition: color .1s linear, background-color .1s linear, opacity .1s linear;
 }
+
 a:hover {
     text-decoration: none;
     box-shadow: 0 1px 0 0 currentColor;
 }
 
-.site-title, .page-link {
-    font-family: Montserrat, sans-serif;
-}
-.site-title {
-    font-weight: bold;
-}
-
-.page-link, .post-title {
-    font-weight: 500;
-}
+/*----------------------------------------------------------------------------*/
 
 .site-header {
     border-top: none;
 }
+
 .site-title-wrapper {
-    background-color: #1494fb;
+    background-color: rgba(20,148,251,1);
     padding: 2.5rem 0;
 }
+
 .site-title {
+    font-family: livvic, sans-serif;
+    font-weight: 700;
     float: none;
     letter-spacing: 0;
     font-size: 2.25rem;
     color: #ffffff;
 }
+
 .site-title:hover, .site-title:visited {
     color: #ffffff;
 }
@@ -44,11 +41,21 @@ a:hover {
     z-index: 999;
 }
 
+/*----------------------------------------------------------------------------*/
+
+.page-link {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+}
+
+/*----------------------------------------------------------------------------*/
+
 .search {
     float: right;
     line-height: 54px;
     width: 35%;
 }
+
 .search input {
     width: 100%;
     padding: 0.45rem 2rem 0.45rem 0.45rem;
@@ -57,12 +64,14 @@ a:hover {
     border-radius: 0.25rem;
     letter-spacing: .034em;
 }
+
 .search i {
     position: absolute;
     top: 35%;
     right: 3.5%;
     color: #828282;
 }
+
 .search ul {
     margin: -0.5rem 0 0 0;
     z-index: 999;
@@ -75,6 +84,7 @@ a:hover {
     line-height: 1.3;
     display: none;
 }
+
 .search li {
     line-height: 1.3;
     list-style: none;
@@ -82,16 +92,16 @@ a:hover {
     font-size: .9rem;
 }
 
-.page-content {
-    flex: none;
-}
+/*----------------------------------------------------------------------------*/
 
 .categories {
     margin-bottom: 30px;
 }
+
 .categories a {
     margin: 5px 0;
 }
+
 .category_name {
     display: inline-block;
     padding: 0 8px;
@@ -102,9 +112,11 @@ a:hover {
     box-sizing: border-box;
     color: #828282;
 }
+
 .category_name:visited {
     color: #828282;
 }
+
 .category_name:hover {
     box-shadow: none;
     border: 1px solid currentColor;
@@ -118,12 +130,20 @@ a:hover {
     box-shadow: 0 1px 3px rgba(0,37,55,.06);
 }
 
+/*----------------------------------------------------------------------------*/
+
+.page-content {
+    flex: none;
+}
+
 .post-content {
     margin-bottom: 5rem;
 }
+
 .post-content h1 {
     margin-top: 45px;
 }
+
 .post-title {
     margin: 0;
     padding-bottom: 10px;
@@ -131,77 +151,127 @@ a:hover {
     font-size: 2rem;
     line-height: 1.3;
     letter-spacing: inherit;
+    font-family: Livvic, sans-serif;
 }
-.post-list .post-title {
-    font-size: 1.25rem;
-}
+
 .post .post-title {
     margin-top: 30px;
 }
+
+.post-list-heading {
+    display: none;
+}
+
+.post-list .post-title {
+    font-size: inherit;
+    font-weight: 500;
+}
+
 .post-link {
+    position: relative;
     display: inline;
+    color: black;
 }
-.post-link:hover {
-    color: #686868;
+
+.post-link:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 70%;
+    left: -0.1em;
+    right: -0.1em;
+    bottom: 0;
+    transition: top .2s ease-in-out;
+    background-color: rgba(20,148,251,0.5);
 }
+
+.post-link:hover, .post-link:focus, .post-link:visited {
+    color: black;
+    box-shadow: none;
+}
+
+.post-link:hover:after {
+    top: 0;
+}
+
 .post-excerpt {
     margin: 10px 0;
 }
+
 .post-categories {
     display: inline-block;
 }
+
 .post-meta {
     float: right;
 }
 
+/*----------------------------------------------------------------------------*/
+
 .pagination {
     text-align: center;
 }
+
 .pagination * {
     margin-right: 1rem;
     border: 1px solid;
     padding: 0.05rem 0.6rem;
     border-radius: 0.2rem;
 }
+
 .pagination a:visited {
     color: #2a7ae2;
 }
+
 .pagination a {
     box-shadow: none;
 }
 
+/*----------------------------------------------------------------------------*/
+
 .footer-col-wrapper {
     color: inherit;
 }
+
 .contact-list, .social-media-list li {
     display: inline-block;
     margin-right: 1.2rem;
     font-size: 1.2rem;
 }
+
 .contact-list span, .social span {
     display: none;
 }
+
 .contact-list a {
     box-shadow: none;
 }
+
 .social {
     display: inline-block;
 }
+
 .social-media-list {
     display: inline-block;
     margin: 0;
 }
+
 .social-media-list a {
     box-shadow: none;
 }
+
 .p-name, .contact-list span, .social span {
     font-weight: bold;
 }
+
+/*----------------------------------------------------------------------------*/
 
 blockquote {
     letter-spacing: .2px;
     font-size: inherit;
 }
+
+/*----------------------------------------------------------------------------*/
 
 @media screen and (max-width: 600px) {
     .site-title-wrapper {
