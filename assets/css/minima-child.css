@@ -63,6 +63,7 @@ a:hover {
     border: 1px solid #e8e8e8;
     border-radius: 0.25rem;
     letter-spacing: .034em;
+    font-family: inherit;
 }
 
 .search i {
