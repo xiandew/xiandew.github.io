@@ -169,7 +169,7 @@ a:hover {
 
 .post-link {
     position: relative;
-    display: inline;
+    display: inline-block;
     color: black;
 }
 
