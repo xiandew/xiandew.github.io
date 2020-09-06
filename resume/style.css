@@ -9,6 +9,11 @@ a {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    color: #4DA167;
+}
+
+a:hover {
+    color: #4E6E5D;
 }
 
 ul {
@@ -20,21 +25,25 @@ section {
     margin: 1rem 0;
 }
 
+dd {
+    margin-bottom: 0;
+}
+
 .heading {
-  width: 80%;
-  display: inline-flex;
+    width: 80%;
+    display: inline-flex;
 }
 
 .photo {
-  float: right;
-  background-color: inherit;
-  width: 150px;
-  padding-left: 1rem;
-  margin-top: -10px;
+    float: right;
+    background-color: inherit;
+    width: 150px;
+    padding-left: 1rem;
+    margin-top: -10px;
 }
 
 .photo img {
-  width: 100%;
+    width: 100%;
 }
 
 .header {
@@ -52,6 +61,7 @@ section {
     margin-bottom: 0;
     font-size: 1.5rem;
 }
+
 .title a {
     font-weight: normal;
     font-size: 80%;
@@ -84,11 +94,13 @@ section {
 .uni-loc {
     float: right;
 }
+
 @media screen and (max-width: 1200px) {
     .photo {
         margin: 1rem 0;
     }
 }
+
 @media screen and (max-width: 992px) {
     section {
         margin: 2rem 0;
@@ -96,10 +108,12 @@ section {
     ul {
         padding: 0 1.25rem;
     }
-    li{
-        margin:  0.5rem 0;
+    li {
+        margin: 0.5rem 0;
     }
-
+    dd {
+        margin-bottom: .5rem;
+    }
     .heading {
         width: 70%;
         margin: 0 auto;
@@ -107,54 +121,45 @@ section {
     .heading * {
         display: block;
     }
-
     .photo {
         max-width: 130px;
         display: inline-block;
         margin-top: 0;
     }
-
     .name {
         margin-bottom: 2rem;
     }
-
     .contact-detail {
         width: 100%;
         box-sizing: border-box;
         padding: 0;
     }
-
     .bachelor {
         margin-bottom: 1rem;
     }
-
     .bachelor time, .uni-loc {
         float: none;
         display: block;
     }
-
     .key-coursework span {
         display: block;
         margin-top: 0.5rem;
     }
-
     .title span {
         display: block;
     }
-
     .sub-title {
         margin-bottom: 1rem;
     }
-
     .sub-title time {
         float: none;
         display: block;
     }
-
     .key-coursework {
         padding: 0 1rem;
     }
 }
+
 @media screen and (max-width: 576px) {
     .heading {
         width: 100%;
