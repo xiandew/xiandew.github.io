@@ -5,19 +5,19 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col">
-          <span class="p-name">
+        <span class="p-name">
           {%- if site.author -%}
-            {{ site.author | escape }}
+          {{ site.author | escape }}
           {%- else -%}
-            {{ site.title | escape }}
+          {{ site.title | escape }}
           {%- endif -%}
-          </span>
-          <div>
-            I am currently a third year student at University of Melbourne.
-            I love programming, working, being with friends and sleeping😁.
-            More about me, click
-            <a href="{{ site.url | append: site.resume_url }}" target="_blank">here</a>.
-          </div>
+        </span>
+        <div>
+          I am currently a Master student (Master of IT - Computing Stream) at University of Melbourne.
+          I love programming, working, being with friends and sleeping😁.
+          More about me, click
+          <a href="{{ site.url | append: site.resume_url }}" target="_blank">here</a>.
+        </div>
       </div>
 
       <div class="footer-col">
@@ -25,10 +25,11 @@
           {%- if site.email -%}
           <span>Email</span>
           <a class="u-email" href="mailto:{{ site.email }}">
-            <i class="fa fa-envelope"></i>
+            <i class="fas fa-envelope-square" aria-hidden="true"></i>
           </a>
           {%- endif -%}
-        </div><div class="social">
+        </div>
+        <div class="social">
           <span>Social</span>
           {%- include social.html -%}
         </div>
