@@ -67,8 +67,7 @@ a:visited {
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid #CFCFCF;
-    letter-spacing: .034em;
-    font-family: inherit;
+    font-family: Montserrat, sans-serif;
 }
 
 .search i {
