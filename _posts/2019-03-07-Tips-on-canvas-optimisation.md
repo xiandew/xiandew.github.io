@@ -5,6 +5,7 @@
   categories:
     - Canvas
     - JavaScript
+    - Game Dev
 ---
 
 When developing games with canvas, the frame rate matters the most if the game

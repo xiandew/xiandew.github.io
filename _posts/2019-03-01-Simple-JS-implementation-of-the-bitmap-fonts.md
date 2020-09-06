@@ -4,6 +4,7 @@
   tags:
   categories:
     - JavaScript
+    - Game Dev
 ---
 
 When writing WeChat games, one of the problems that I often encountered was using various custom fonts
