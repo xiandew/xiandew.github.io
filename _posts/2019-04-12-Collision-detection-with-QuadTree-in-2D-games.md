@@ -5,6 +5,7 @@
   categories:
     - JavaScript
     - Canvas
+    - Game Dev
 ---
 
 Collision detection is an essential part in game development, whose computions

@@ -4,6 +4,7 @@
   tags:
   categories:
     - JavaScript
+    - Game Dev
 ---
 
 > JavaScript’s memory model is built on a technology known as a Garbage Collector. In many languages, the programmer is directly responsible for allocating and freeing memory from the system’s Memory Heap. A Garbage Collector system, however, manages this task on behalf of the programmer, meaning that objects aren’t directly freed from memory when the programmer dereferences it, but rather at a later time when the GC’s heuristics decide that it would be beneficial to do so. This decision process requires that the GC execute some statistical analysis on active and inactive objects, which takes a block of time to perform.

@@ -4,6 +4,7 @@
   tags:
   categories:
     - JavaScript
+    - Game Dev
 ---
 
 You can play it [here]({{ site.url | append: '/GuessTheWord/' }}){:target="_blank"}.
