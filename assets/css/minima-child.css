@@ -1,15 +1,20 @@
 body {
-    letter-spacing: .2px;
-    font-family: Roboto,arial,sans-serif;
+    font-family: 'Roboto',arial,sans-serif;
 }
 
 a {
     transition: color .1s linear, background-color .1s linear, opacity .1s linear;
+    color: #4DA167;
 }
 
 a:hover {
     text-decoration: none;
     box-shadow: 0 1px 0 0 currentColor;
+    color: #111 !important;
+}
+
+a:visited {
+    color: #4DA167;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -19,12 +24,12 @@ a:hover {
 }
 
 .site-title-wrapper {
-    background-color: rgba(20,148,251,1);
+    background-color: #4D5057;
     padding: 2.5rem 0;
 }
 
 .site-title {
-    font-family: livvic, sans-serif;
+    font-family: 'livvic', sans-serif;
     font-weight: 700;
     float: none;
     letter-spacing: 0;
@@ -33,7 +38,7 @@ a:hover {
 }
 
 .site-title:hover, .site-title:visited {
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .site-nav {
@@ -60,8 +65,8 @@ a:hover {
     width: 100%;
     padding: 0.45rem 2rem 0.45rem 0.45rem;
     box-sizing: border-box;
-    border: 1px solid #e8e8e8;
-    border-radius: 0.25rem;
+    border: none;
+    border-bottom: 1px solid #CFCFCF;
     letter-spacing: .034em;
     font-family: inherit;
 }
@@ -183,7 +188,7 @@ a:hover {
     right: -0.1em;
     bottom: 0;
     transition: top .2s ease-in-out;
-    background-color: rgba(20,148,251,0.5);
+    background-color: rgba(79,192,141,0.5);
 }
 
 .post-link:hover, .post-link:focus, .post-link:visited {
@@ -215,13 +220,7 @@ a:hover {
 
 .pagination * {
     margin-right: 1rem;
-    border: 1px solid;
     padding: 0.05rem 0.6rem;
-    border-radius: 0.2rem;
-}
-
-.pagination a:visited {
-    color: #2a7ae2;
 }
 
 .pagination a {
@@ -237,7 +236,7 @@ a:hover {
 .contact-list, .social-media-list li {
     display: inline-block;
     margin-right: 1.2rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .contact-list span, .social span {
