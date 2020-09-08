@@ -114,6 +114,13 @@ dd {
     dd {
         margin-bottom: .5rem;
     }
+
+    .col-md-5, .col-md-7 {
+        -ms-flex: none;
+        flex: unset;
+        max-width: 100%;
+    }
+
     .heading {
         width: 70%;
         margin: 0 auto;
