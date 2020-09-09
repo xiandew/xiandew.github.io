@@ -17,9 +17,9 @@ title: Xiande Wen
 author: Xiande Wen
 email: xiandew@student.unimelb.edu.au
 description: >- # this means to ignore newlines until "baseurl:"
-  XianDe WEN's personal blog. "I am currently a third year student at
-  University of Melbourne. I love programming, working, being with
-  friends and sleeping😁"
+  XianDe WEN's personal blog. "I am currently a Master student
+  (Master of IT - Computing Stream) at University of Melbourne.
+  I love programming, working, being with friends and sleeping😁."
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://xiandew.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
