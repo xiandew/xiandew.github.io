@@ -99,4 +99,5 @@ var config = {
 Ready to go!
 
 # **References**
+- [利用 Phaser 开发微信小游戏的尝试](https://indienova.com/indie-game-development/run-phaser-on-wechat-game-platform/)
 - [phaser3 微信小游戏若干问题](https://www.cnblogs.com/honghong87/p/9592680.html)
