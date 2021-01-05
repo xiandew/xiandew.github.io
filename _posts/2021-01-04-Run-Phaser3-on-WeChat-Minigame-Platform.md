@@ -11,7 +11,7 @@
 WeChat platform doesn't support `blob` for the time being hence Phaser's way of
 loading images won't work here. Some modifications to the source code are neccessary.
 
-```
+```console
 > git clone https://github.com/photonstorm/phaser3-custom-build
 > cd phaser3-custom-build
 > npm install
@@ -19,7 +19,7 @@ loading images won't work here. Some modifications to the source code are necces
 
 Go to `node_modules/phaser/src/loader/filetypes/ImageFile.js` and change it as following:
 
-```
+```javascript
 ...
 +   load: function()
 +   {
@@ -58,7 +58,7 @@ Go to `node_modules/phaser/src/loader/filetypes/ImageFile.js` and change it as f
 ```
 
 Save it and then:
-```
+```console
 > cd phaser3-custom-build
 > npm run buildfull
 ```
@@ -67,7 +67,7 @@ Copy `./dist/phaser-full.min.js` to your libs directory, in my case, `./js/libs/
 
 # **2. Update weapp-adapter**
 
-```
+```console
 > git clone https://github.com/xiandew/weapp-adapter
 > cd weapp-adapter
 > npm run build
@@ -79,7 +79,7 @@ Copy `./dist/weapp-adapter.js` to your libs directory.
 
 Import the following to whichever file you want to use Phaser.
 
-```
+```javascript
 import './js/libs/weapp-adapter';
 import Phaser from './js/libs/phaser.min';
 ```
@@ -88,10 +88,25 @@ import Phaser from './js/libs/phaser.min';
 
 When setup Phaser, make sure to expose WeChat's global canvas.
 
-```
+```javascript
 var config = {
     type: Phaser.CANVAS,
     canvas: canvas,
+    ...
+};
+```
+
+# **5. Make sure to switch on touch support**
+
+You have to specify `input.touch = true` explicitly in `config` for Phaser's touch support.
+
+```javascript
+var config = {
+    type: Phaser.CANVAS,
+    canvas: canvas,
+    input: {
+        touch: true
+    }
     ...
 };
 ```
