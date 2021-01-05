@@ -6,7 +6,7 @@
       - Game Dev
 ---
 
-- Load Images
+# **1. Customise Image loader**
 
 WeChat platform doesn't support `blob` for the time being hence Phaser's way of
 loading images won't work here. Some modifications to the source code are neccessary.
@@ -65,7 +65,7 @@ Save it and then:
 
 Copy `./dist/phaser-full.min.js` to your libs directory, in my case, `./js/libs/`.
 
-- Update weapp-adapter
+# **2. Update weapp-adapter**
 
 ```
 > git clone https://github.com/xiandew/weapp-adapter
@@ -75,13 +75,16 @@ Copy `./dist/phaser-full.min.js` to your libs directory, in my case, `./js/libs/
 
 Copy `./dist/weapp-adapter.js` to your libs directory.
 
-- Import
+# **3. Import**
+
+Import the following to whichever file you want to use Phaser.
+
 ```
 import './js/libs/weapp-adapter';
 import Phaser from './js/libs/phaser.min';
 ```
 
-- Expose the global canvas to Phaser
+# **4. Expose the global canvas to Phaser**
 ```
 var config = {
     type: Phaser.CANVAS,
@@ -90,7 +93,7 @@ var config = {
 };
 ```
 
-- Ready to go!
+# **Ready to go!**
 
 # **References**
 - [phaser3 微信小游戏若干问题](https://www.cnblogs.com/honghong87/p/9592680.html)
