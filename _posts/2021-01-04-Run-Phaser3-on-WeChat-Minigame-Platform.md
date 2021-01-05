@@ -85,6 +85,9 @@ import Phaser from './js/libs/phaser.min';
 ```
 
 # **4. Expose the global canvas to Phaser**
+
+When setup Phaser, make sure to expose WeChat's global canvas.
+
 ```
 var config = {
     type: Phaser.CANVAS,
@@ -93,7 +96,7 @@ var config = {
 };
 ```
 
-# **Ready to go!**
+Ready to go!
 
 # **References**
 - [phaser3 微信小游戏若干问题](https://www.cnblogs.com/honghong87/p/9592680.html)
