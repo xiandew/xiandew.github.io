@@ -70,21 +70,41 @@ Copy `./dist/phaser-full.min.js` to your libs directory, in my case, `./js/libs/
 ```console
 > git clone https://github.com/xiandew/weapp-adapter
 > cd weapp-adapter
+> npm install
 > npm run build
 ```
 
 Copy `./dist/weapp-adapter.js` to your libs directory.
 
-# **3. Import**
+# **3. Introduce DOMParser**
+WeChat minigame doesn't support DOMParser, which will cause problem if you
+want to use Phaser's Bitmap fonts.
+
+`xmldom.DOMParser` is used for the DOMParser. I made a custom build to it
+so we only need to put a single file under our libs directory rather than a folder.
+
+```console
+> git clone https://github.com/xiandew/xmldom-custom-build
+> cd xmldom-custom-build
+> npm install
+> npm run build
+```
+
+Copy `./dist/dom-parser.min.js` to your libs directory.
+
+# **4. Import**
 
 Import the following to whichever file you want to use Phaser.
 
 ```javascript
 import './js/libs/weapp-adapter';
 import Phaser from './js/libs/phaser.min';
+
+// Only required if you're having issue with parsing XML files.
+window.DOMParser = require('./js/libs/dom-parser.min');
 ```
 
-# **4. Expose the global canvas to Phaser**
+# **5. Expose the global canvas to Phaser**
 
 When setup Phaser, make sure to expose WeChat's global canvas.
 
@@ -96,7 +116,7 @@ var config = {
 };
 ```
 
-# **5. Make sure to switch on touch support**
+# **6. Make sure to switch on touch support**
 
 You have to specify `input.touch = true` explicitly in `config` for Phaser's touch support.
 
