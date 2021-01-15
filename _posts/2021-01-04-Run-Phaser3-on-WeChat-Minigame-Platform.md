@@ -215,6 +215,6 @@ after you set its size since resizing it will clear everything drawn.
 Ready to go!
 
 # **References**
-- [Relationship Chain Data | Weixin public doc](https://developers.weixin.qq.com/minigame/en/dev/guide/open-ability/open-data.html)
+- [Relationship Chain Data \| Weixin public doc](https://developers.weixin.qq.com/minigame/en/dev/guide/open-ability/open-data.html)
 - [利用 Phaser 开发微信小游戏的尝试](https://indienova.com/indie-game-development/run-phaser-on-wechat-game-platform/)
 - [phaser3 微信小游戏若干问题](https://www.cnblogs.com/honghong87/p/9592680.html)
