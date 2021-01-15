@@ -131,7 +131,7 @@ var config = {
 };
 ```
 
-# **#7. If you want to make use of WeChat Relationship Chain Data**
+# **7. If you want to make use of WeChat Relationship Chain Data**
 
 Making use of WeChat Relationship Chain Data involves sensative privacy of WeChat users
 so WeChat introduces the idea of "open data domain (ODD)" which is the only place that the
