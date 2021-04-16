@@ -38,6 +38,9 @@ disqus:
     # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
     shortname: xiandew-github-io
 
+# Google Analytics
+google_analytics: G-Z8WEB32VZJ
+
 # Build settings
 markdown: kramdown
 theme: minima
