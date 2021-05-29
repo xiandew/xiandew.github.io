@@ -16,6 +16,8 @@ Basically what we need to do is that:
 
 Please refer to [ Run Phaser3 on WeChat Minigame Platform ](/game dev/2021/01/04/Run-Phaser3-on-WeChat-Minigame-Platform.html).
 
+*Note： It is important to set the `type` in the game config to `Phaser.WEBGL` since we can only draw Three.js onto Phaser when they're on the same context*
+
 # **2. Add Three.js Scene within Phaser Scene**
 
 For example,
@@ -59,6 +61,38 @@ export default class MainScene extends Phaser.Scene {
         this.cube.rotation.y += 0.01;
     }
 }
+```
+
+# **3. Make sure to turn on "WebGL 2" for Phaser if your Three.js >= r118**
+
+According to [WebGL1Renderer – three.js docs](https://threejs.org/docs/#api/en/renderers/WebGL1Renderer):
+> Since r118 WebGLRenderer automatically uses a WebGL 2 rendering context.
+
+So we need to make sure Phaser uses WebGL 2 as well.
+
+According to [Phaser 3 :: src\game config\custom webgl2 canvas.js](http://labs.phaser.io/view.html?src=src\game%20config\custom%20webgl2%20canvas.js&v=3.55.2):
+
+We need to add the following to Phaser game config:
+```javascript
+// ...
+const contextCreationConfig = {
+    alpha: false,
+    depth: false,
+    antialias: true,
+    premultipliedAlpha: true,
+    stencil: true,
+    preserveDrawingBuffer: false,
+    failIfMajorPerformanceCaveat: false,
+    powerPreference: 'default'
+};
+
+const config = {
+    type: Phaser.WEBGL,
+    canvas: canvas,
+    context: canvas.getContext('webgl2', contextCreationConfig),
+    // ...
+}
+// ...
 ```
 
 
