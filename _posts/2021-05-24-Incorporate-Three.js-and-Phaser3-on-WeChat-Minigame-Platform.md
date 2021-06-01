@@ -95,6 +95,14 @@ const config = {
 // ...
 ```
 
+# **4. If the above doesn't work for you (very likely):**
+
+If you have setup WebGL 2 as above, most likely the preview in the WeChat Developer Tool will be fine while it's likely to show a wierd display on the phone as WeChat app doesn't support WebGL 2 yet. So here is the solution, we have to force both Phaser and Three.js to use WebGL 1.
+
+Well, there won't be a problem for Phaser since it defaults to use WebGL 1 so just revoke what we did in the above step.
+
+But if you try to use `THREE.WebGL1Renderer` to enforce Three.js(>=r118) to use WebGL 2, you will likely find it's not working. In that case, simply use a version of Three.js before r118 and it should be ready to go :)
+
 
 One thing worth to mention here, for others who are the same new to Three.js, is that Three.js doesn't provide physics supports. For that, you might want to look at "ammo.js" which is used in most Three.js's official examples. Of course, there are planty of other physics libs for Three.js.
 
