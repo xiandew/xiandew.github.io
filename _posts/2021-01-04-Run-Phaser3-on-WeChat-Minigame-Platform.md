@@ -76,6 +76,24 @@ Copy `./dist/phaser-full.min.js` to your libs directory, in my case, `./js/libs/
 
 Copy `./dist/weapp-adapter.js` to your libs directory.
 
+# **2.1. If you want to use Phaser's scene level input manager**
+
+If you want Phaser's `scene.input.on("pointerup")` (or plugins that relies on that, e.g. `rexvirtualjoystickplugin`) to work properly, you need to add `target` to `changedTouches`:
+
+Locate the following line in `src/EventIniter/TouchEvent.js`:
+```javascript
+event.changedTouches = rawEvent.changedTouches
+```
+and change it to
+```javascript
+event.changedTouches = rawEvent.changedTouches.map((touch) => {
+    touch.target = event.target
+    return touch
+})
+```
+Rebundle the file and copy it to you libs directory.
+
+
 # **3. Introduce DOMParser**
 WeChat minigame doesn't support DOMParser, which will cause problem if you
 want to use Phaser's Bitmap fonts.
