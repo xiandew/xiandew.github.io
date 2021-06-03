@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto',arial,sans-serif;
+    font-family: 'Roboto', arial, sans-serif;
 }
 
 a {
@@ -83,7 +83,7 @@ a:visited {
     z-index: 999;
     position: absolute;
     border: 1px solid #e8e8e8;
-    box-shadow: 0 1px 3px rgba(0,37,55,.06);
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .06);
     box-sizing: border-box;
     background: white;
     padding: 0.5rem;
@@ -133,7 +133,7 @@ a:visited {
     border: 1px solid #e7eaf1;
     border-radius: 0.5rem;
     box-sizing: border-box;
-    box-shadow: 0 1px 3px rgba(0,37,55,.06);
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .06);
 }
 
 /*----------------------------------------------------------------------------*/
@@ -175,29 +175,21 @@ a:visited {
 
 .post-link {
     position: relative;
-    display: inline-block;
     color: black;
+    background: linear-gradient(0, rgba(79, 192, 141, 0.5) 30%, rgba(255, 255, 255, 0) 30%);
+    display: inline;
+    background-size: 100% 100%;
+    background-position: 0% 100%;
+    transition: background-size .2s ease-in-out;
 }
 
-.post-link:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 70%;
-    left: -0.1em;
-    right: -0.1em;
-    bottom: 0;
-    transition: top .2s ease-in-out;
-    background-color: rgba(79,192,141,0.5);
+.post-link:hover {
+    background-size: 100% 300%;
 }
 
 .post-link:hover, .post-link:focus, .post-link:visited {
     color: black;
     box-shadow: none;
-}
-
-.post-link:hover:after {
-    top: 0;
 }
 
 .post-excerpt {
