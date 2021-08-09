@@ -1,6 +1,5 @@
 body {
     font-family: "Times New Roman";
-    font-size: 1.2rem;
 }
 
 a {
@@ -16,13 +15,13 @@ a:hover {
     color: #4E6E5D;
 }
 
-ul {
-    padding: 0 1rem;
-}
-
 section {
     display: block;
-    margin: 1rem 0;
+    margin: 2rem 0;
+}
+
+section:first-child {
+    margin: 1em 0;
 }
 
 dd {
@@ -47,19 +46,21 @@ dd {
 }
 
 .header {
-    font-size: 1.5rem;
     font-weight: bold;
-    border-bottom: 1px solid;
+    border-bottom: 2px solid;
 }
 
-.key-coursework {
-    padding: 0 2.5rem;
+.header, .name, .exp-one-liner, .sub-title {
+    -webkit-transform: scaleY(0.9);
+    -moz-transform: scaleY(0.9);
+    -ms-transform: scaleY(0.9);
+    -o-transform: scaleY(0.9);
+    transform: scaleY(0.9);
 }
 
 .title {
     font-weight: bold;
     margin-bottom: 0;
-    font-size: 1.5rem;
 }
 
 .title a {
@@ -67,17 +68,22 @@ dd {
     font-size: 80%;
 }
 
+h5 {
+    display: inline-block;
+    margin: 0;
+}
+
+.sub-title em {
+    float: right;
+}
+
 .sub-title span {
     font-weight: bold;
 }
 
-.sub-title small {
-    font-style: italic;
-    float: right;
-}
-
 .name {
     font-weight: bold;
+    padding: 0;
 }
 
 .contact-detail {
@@ -92,6 +98,18 @@ dd {
 }
 
 .uni-loc {
+    float: right;
+}
+
+.exp-one-liner .company-name {
+    font-weight: 500;
+}
+
+.exp-one-liner .company-name::before {
+    content: " – ";
+}
+
+.exp-one-liner .period {
     float: right;
 }
 
@@ -114,13 +132,11 @@ dd {
     dd {
         margin-bottom: .5rem;
     }
-
     .col-md-5, .col-md-7 {
         -ms-flex: none;
         flex: unset;
         max-width: 100%;
     }
-
     .heading {
         width: 70%;
         margin: 0 auto;
