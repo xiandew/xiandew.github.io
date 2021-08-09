@@ -107,6 +107,7 @@ h5 {
 
 .exp-one-liner .company-name::before {
     content: " – ";
+    font-family: initial;
 }
 
 .exp-one-liner .period {
