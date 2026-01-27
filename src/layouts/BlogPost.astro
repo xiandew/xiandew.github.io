@@ -1,0 +1,214 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import SpotlightLayout from './SpotlightLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import DisqusComments from '../components/DisqusComments.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, disqusIdentifier, tags } = Astro.props;
+
+const canonicalUrl = Astro.site
+    ? new URL(Astro.url.pathname, Astro.site).toString()
+    : Astro.url.toString();
+
+const disqusId = typeof disqusIdentifier === 'string' && disqusIdentifier.length > 0
+    ? disqusIdentifier
+    : Astro.url.pathname;
+---
+
+<SpotlightLayout title={title} description={description}>
+    <div>
+        <a href="/blog" class="ascii-muted ascii-mono" aria-label="Go back to articles">[ ← back to blog ]</a>
+
+        <article class="ascii-surface" style="margin-top: 14px; padding: 18px;">
+            <header>
+                <p class="ascii-muted" style="margin: 0;">
+                    <FormattedDate date={pubDate} />
+                </p>
+                <h1 class="ascii-section-title" style="margin-top: 10px;">
+                    {title}
+                </h1>
+                {description ? (
+                    <p class="ascii-lede">{description}</p>
+                ) : null}
+                {tags && tags.length > 0 && (
+                    <div class="blog-tags" style="margin-top: 12px;">
+                        {tags.map(tag => (
+                            <span class="tag">{tag}</span>
+                        ))}
+                    </div>
+                )}
+            </header>
+
+            <hr class="ascii-rule" style="margin: 18px 0;" />
+
+            <div class="prose-content">
+                <slot />
+            </div>
+
+            <hr class="ascii-rule" style="margin: 18px 0;" />
+
+            <DisqusComments url={canonicalUrl} identifier={disqusId} />
+        </article>
+    </div>
+</SpotlightLayout>
+
+<style is:global>
+    /* Blog typography aligned to the ASCII theme */
+    .prose-content {
+        line-height: 1.85;
+        font-size: 1.05rem;
+        color: var(--fg);
+        letter-spacing: 0;
+    }
+
+    /* Headings */
+    .prose-content h1,
+    .prose-content h2,
+    .prose-content h3,
+    .prose-content h4 {
+        color: var(--fg);
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        margin-top: 2.3em;
+        margin-bottom: 0.8em;
+        line-height: 1.25;
+    }
+
+    /* Links */
+    .prose-content a {
+        color: var(--fg);
+        text-decoration: underline;
+        text-decoration-style: dashed;
+        text-underline-offset: 0.2em;
+        font-weight: 700;
+    }
+    .prose-content a:hover {
+        opacity: 0.85;
+    }
+
+    /* Lists */
+    .prose-content ul, .prose-content ol {
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+        list-style-type: disc;
+        padding-left: 1.625em;
+    }
+    .prose-content li {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    /* Blockquotes */
+    .prose-content blockquote {
+        font-style: italic;
+        color: var(--fg);
+        border-left: 2px dashed var(--border-strong);
+        padding-left: 1em;
+        margin: 1.6em 0;
+        opacity: 0.95;
+    }
+
+    /* Code */
+    .prose-content code {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 0.9em;
+        color: var(--fg);
+        background-color: var(--accent-bg);
+        padding: 0.25em 0.4em;
+        border-radius: 4px;
+        border: 1px dashed var(--border);
+    }
+    
+    .prose-content pre {
+        font-family: var(--font-mono);
+        background-color: var(--panel-2);
+        color: var(--fg);
+        overflow-x: auto;
+        padding: 1em;
+        border-radius: var(--radius);
+        border: 1px dashed var(--border);
+        margin: 1.5em 0;
+    }
+    .prose-content pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+        font-weight: 400;
+    }
+
+    /* Tags */
+    .blog-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .blog-tags .tag {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--fg);
+        background-color: var(--accent-bg);
+        padding: 4px 10px;
+        border-radius: 4px;
+        border: 1px dashed var(--border);
+        text-transform: lowercase;
+    }
+    
+    .prose-content img {
+        border-radius: var(--radius);
+        border: 1px dashed var(--border);
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    /* Tables */
+    .prose-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        font-size: 0.95em;
+        overflow-x: auto;
+        display: block;
+    }
+
+    .prose-content thead {
+        background-color: var(--accent-bg);
+    }
+
+    .prose-content th {
+        font-weight: 700;
+        text-align: left;
+        padding: 0.75em 1em;
+        border: 1px dashed var(--border);
+        color: var(--fg);
+    }
+
+    .prose-content td {
+        padding: 0.75em 1em;
+        border: 1px dashed var(--border);
+    }
+
+    .prose-content tbody tr:nth-child(even) {
+        background-color: var(--panel-2);
+    }
+
+    .prose-content tbody tr:hover {
+        background-color: var(--accent-bg);
+    }
+
+    @media (max-width: 719px) {
+        .prose-content table {
+            font-size: 0.85em;
+        }
+        .prose-content th,
+        .prose-content td {
+            padding: 0.6em 0.75em;
+        }
+    }
+</style>
