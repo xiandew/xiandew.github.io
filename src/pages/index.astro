@@ -1,0 +1,312 @@
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+---
+
+<LandingLayout>
+	<script>
+		const avatar = document.querySelector('.ascii-avatar');
+		if (avatar) {
+			const originalText = avatar.textContent;
+			const lines = originalText.split('\n');
+			const density = ' .:-=+*#%@';
+			
+			function animate() {
+				const time = Date.now() * 0.0008;
+				const newLines = lines.map((line, y) => {
+					return line.split('').map((char, x) => {
+						// Plasma effect calculation
+						const value1 = Math.sin(x * 0.1 + time);
+						const value2 = Math.sin(y * 0.1 + time);
+						const value3 = Math.sin((x + y) * 0.08 + time);
+						const value4 = Math.sin(Math.sqrt(x * x + y * y) * 0.1 + time);
+						
+						const plasma = (value1 + value2 + value3 + value4) / 4;
+						const normalized = (plasma + 1) / 2; // normalize to 0-1
+						
+						// Get original character brightness
+						const originalBrightness = char === ' ' ? 0 : char === '.' ? 0.1 : 
+							char === ':' ? 0.2 : char === '-' || char === '=' ? 0.3 :
+							char === '+' || char === '*' ? 0.4 : char === '#' ? 0.6 :
+							char === '%' || char === '@' ? 0.8 : 0.5;
+						
+						// Modulate original brightness with plasma
+						const finalBrightness = originalBrightness * (0.7 + normalized * 0.6);
+						const index = Math.floor(finalBrightness * (density.length - 1));
+						
+						return density[Math.min(index, density.length - 1)];
+					}).join('');
+				});
+				
+				avatar.textContent = newLines.join('\n');
+				requestAnimationFrame(animate);
+			}
+			
+			animate();
+		}
+	</script>
+	<style>
+		@media (max-width: 768px) {
+			.ascii-avatar {
+				display: none !important;
+			}
+			.avatar-grid {
+				grid-template-columns: 1fr !important;
+			}
+		}
+	</style>
+	<section class="ascii-section">
+		<div class="ascii-surface" style="padding: 18px;">
+			<p class="ascii-muted ascii-mono" style="margin: 0;">[ Melbourne, AU ]</p>
+			<div
+				class="avatar-grid"
+				style="display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: stretch;"
+			>
+				<div style="display: flex; flex-direction: column; justify-content: center;">
+					<h1 class="ascii-section-title" style="margin-top: 10px;">
+						Paul Wen
+					</h1>
+					<p class="ascii-lede" style="margin-top: 10px;">
+						Cloud + AI tech lead focused on building secure, compliant, and
+						maintainable software. I design end-to-end systems across frontend,
+						backend, and cloud—then ship them with strong engineering
+						discipline.
+					</p>
+				</div>
+				<pre
+					class="ascii-avatar"
+					style="margin: 0; line-height: 1; font-size: 3px; font-family: monospace; white-space: pre; color: var(--muted); height: 100%; display: flex; align-items: center;">....................................................................................................
+....................................................................................................
+.........................................................::.:...:...................................
+...................................................::.:::::@@@@@@@@..:..............................
+..................................................:::=-*@@@@@@@@@@@@@:.:............................
+..................................................%@@@@@@@@@@@@@@@@@@@@#............................
+.................................................:@@@@@@@@@@@@@@@@@@@@@@@%..........................
+.................................................*@@@@@@@@@@@@@@@@@@@@@@@@@.........................
+.................................................=@@@@@@@@@@@%::::::@@@@@@@*........................
+................................................:.@@@@@@@@#:::::::::+@@@@@@@:.......................
+..................................................:@@::::::::::::::::*@@@@@@+.......................
+..................................................:+-::::::::::::::::::@@@@@:::.....................
+..................................................:+-::::::::::::::::=%%%%-::::::...................
+..................................................:#-::::::::::*+-:-%+:::#:::::::...................
+....................................................=::::::+#:......:+:::-=::::::...................
+...................................................:=#-::-#%#.......:+::::#::::.:...................
+................................................:.%:::...:+::=-:...:*::::::::::::...................
+.................................................::%:....::::::::::::::::::::::::...................
+...................................................:--..:+::::::::::::::::::::::....................
+.......................................................--:::::::::::::::::::::::::..................
+........................................................:-:::::::::::::::::::::::@@-:...............
+.........................................................:=::::::::::::::::::::.%@@@@%::::..........
+..........................................................:=::::::::::::::::::.-@@@@@@@@@@*:.:......
+............................................................:::::::::::::--::..@@@@@@@@@@@@@@=::....
+..............................................................-::::::::----...@@@@@@@@@@@@@@@@@=::..
+..............................................................:::-:::::--....#@@@@@@@@@@@@@@@@@@@:..
+.:..:..:::.:::...............................................:.*@@@+:-::. ..-@@@@@@@@@@@@@@@@@@@@@+:
+#############:...............................................:@@@@@*:-..  ..@@@@@@@@@@@@@@@@@@@@@@@@
+###########*+#:.............................................:@@@@@@+%......@@@@@@@@@@@@@@@@@@@@@@@@@
+++++==+++=++++*.............................................=@@@@@%*%%%%*.-@@@@@@@@@@@@@@@@@@@@@@@@@
++++++++++++++++:............................................#@@@@@.%%###%.@@@@@@@@@@@@@@@@@@@@@@@@@@
++++++++++++++++#............................................*@@@@-.%###%.@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**++++++++++++++-...........................................+@@@#.:####.=@@@@@@@@@@@@@@@@@@@@@@@@@@@
+***+++++++++++++*...........................................=@@@..#####.@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+****++++++++++++=*:.........................................+@@@..%###*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*****+++++++++++++:.........................................*@@@++%###*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*******+++++++++++*.........................................#@@@#%%##*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+********+=+++++++++=........................................@@@@*%%%#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**********++++++++++:..................................:..:+@@@@#%%%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+***********+++++++++*...............::..............:::*@@@@@@@@%%%%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+************+++++++++:.......:::::::::::::::....%@@@@@@@@@@@@@@@%%%%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**************+++++++#.....:::::::::::::::::::....@@@@@@@@@@@@@@%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+***************+++++*#=:.:::::::::::::::::::::..  @@@@@@@@@@@@@@@%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+***************########=::::::::::::::::::::::....@@@@@@@@@@@@@@@%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**********################:::::*##%###+---=+-:..:@@@@@@@@@@%%@@@@%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*****###########**######-:::::::::::::###############=::::::::-@@%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+###########***#########::::::::::::::::::+%########=:::::::::::-@@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+######***#############::::::::::::::::::::::::......+%@@@@@%--:--@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#####################-::###-:::::::::::::::::.....:@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+**####################+#######=----:::::::::.....*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
++***********************##########=------:::... .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+::::----:---=+*###*******************#--:::::...+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+:::::::::::::::::::::::::::::::::::::-::::::::..#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+::::::::::::::::::::::::::::::::::::::::::::::::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+::::::::::::::::::::::::::::::::::::::::::::::::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</pre>
+			</div>
+			<hr class="ascii-rule" style="margin: 16px 0;" />
+			<div
+				style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;"
+			>
+				<a class="ascii-mono" href="#contact">[ get in touch ]</a>
+				<a class="ascii-muted ascii-mono" href="/blog">[ read blog ]</a>
+				<a
+					class="ascii-muted ascii-mono"
+					href="https://linkedin.com/in/xiandew"
+					target="_blank"
+					rel="noopener">[ linkedin ]</a
+				>
+			</div>
+		</div>
+	</section>
+
+	<section class="ascii-section">
+		<p class="ascii-eyebrow">Highlights</p>
+		<h2 class="ascii-section-title" data-ascii-glitch>
+			Cloud Platforms, AI Workflows, Technical Leadership
+		</h2>
+		<p class="ascii-lede">
+			I build software for high-stakes workflows—where security, auditability,
+			and reliability matter. My work spans cloud-native services, enterprise
+			integrations, and AI-assisted automation in regulated environments.
+		</p>
+		<p class="ascii-lede">
+			I’m hands-on in delivery while leading architecture, setting expectations
+			with stakeholders, and mentoring engineers.
+		</p>
+		<div
+			class="ascii-surface ascii-surface--muted"
+			style="padding: 18px; margin-top: 14px;"
+		>
+			<p class="ascii-muted ascii-mono" style="margin: 0 0 10px;">
+				[ recent focus ]
+			</p>
+			<ul class="ascii-list" style="line-height: 1.8;">
+				<li>
+					AI-powered reporting workflows with retrieval-augmented generation and
+					human-in-the-loop review.
+				</li>
+				<li>
+					Digitising evaluation and governance processes with role-based access
+					and traceable decision history.
+				</li>
+				<li>
+					Modernising legacy platforms into cloud-aligned, API-first
+					architectures with CI/CD and quality gates.
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<hr class="ascii-rule" />
+
+	<section class="ascii-section">
+		<p class="ascii-eyebrow">Expertise</p>
+		<h2 class="ascii-section-title" data-ascii-glitch>Technical Skills</h2>
+		<div
+			class="ascii-surface ascii-surface--muted"
+			style="padding: 18px; margin-top: 14px;"
+		>
+			<div
+				style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));"
+			>
+				<div>
+					<p style="margin: 0; font-weight: 700;">Frontend & UI Development</p>
+					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+						React, TypeScript, Next.js, component-driven architecture,
+						responsive UI patterns, SPFx, PCF.
+					</p>
+				</div>
+				<div>
+					<p style="margin: 0; font-weight: 700;">Backend & APIs</p>
+					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+						Node.js, Express, REST APIs, GraphQL, PostgreSQL, MongoDB,
+						service-oriented architecture.
+					</p>
+				</div>
+				<div>
+					<p style="margin: 0; font-weight: 700;">Cloud & DevOps</p>
+					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+						Azure, AWS, Docker, CI/CD, IAM/RBAC, secure LLM inference pipelines.
+					</p>
+				</div>
+				<div>
+					<p style="margin: 0; font-weight: 700;">Testing & Quality</p>
+					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+						Jest, React Testing Library, Cypress/Playwright, performance
+						profiling, UI optimisation.
+					</p>
+				</div>
+				<div>
+					<p style="margin: 0; font-weight: 700;">Security & Identity</p>
+					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+						OAuth2/OIDC, Azure AD, role-based access control, secure API design.
+					</p>
+				</div>
+				<div>
+					<p style="margin: 0; font-weight: 700;">AI & Data Platforms</p>
+					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+						LLM integration, RAG, prompt engineering, Databricks ML,
+						human-in-the-loop workflows.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<hr class="ascii-rule" />
+
+	<section class="ascii-section">
+		<p class="ascii-eyebrow">Values</p>
+		<h2 class="ascii-section-title" data-ascii-glitch>
+			Professional Competencies
+		</h2>
+		<div
+			style="display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 14px;"
+		>
+			<div class="ascii-surface" style="padding: 14px;">
+				<p style="margin: 0; font-weight: 700;">Leadership</p>
+				<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+					Technical leadership, sprint planning, mentoring.
+				</p>
+			</div>
+			<div class="ascii-surface" style="padding: 14px;">
+				<p style="margin: 0; font-weight: 700;">Solution Design</p>
+				<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+					Requirements engineering, architecture, security implementation.
+				</p>
+			</div>
+			<div class="ascii-surface" style="padding: 14px;">
+				<p style="margin: 0; font-weight: 700;">Stakeholder Management</p>
+				<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+					Cross-functional collaboration, client consultation, expectations.
+				</p>
+			</div>
+			<div class="ascii-surface" style="padding: 14px;">
+				<p style="margin: 0; font-weight: 700;">Problem Solving</p>
+				<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
+					Analytical thinking, pragmatic troubleshooting, optimisation.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<hr class="ascii-rule" />
+
+	<section id="contact" class="ascii-section">
+		<p class="ascii-eyebrow">Contact</p>
+		<h2 class="ascii-section-title" data-ascii-glitch>Get in touch</h2>
+		<p class="ascii-lede">
+			Open to new projects, interesting problems, and opportunities to
+			collaborate.
+		</p>
+		<div class="ascii-surface" style="padding: 14px; margin-top: 14px;">
+			<p class="ascii-muted ascii-mono" style="margin: 0 0 10px;">
+				[ channels ]
+			</p>
+			<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+				<a class="ascii-mono" href="mailto:xiandepaul.wen@gmail.com"
+					>[ email ]</a
+				>
+				<a
+					class="ascii-mono"
+					href="https://linkedin.com/in/xiandew"
+					target="_blank"
+					rel="noopener">[ linkedin ]</a
+				>
+				<a
+					class="ascii-mono"
+					href="https://github.com/xiandew"
+					target="_blank"
+					rel="noopener">[ github ]</a
+				>
+			</div>
+		</div>
+	</section>
+</LandingLayout>
