@@ -62,14 +62,14 @@ import LandingLayout from "../layouts/LandingLayout.astro";
 				style="display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: stretch;"
 			>
 				<div style="display: flex; flex-direction: column; justify-content: center;">
-					<h1 class="ascii-section-title" style="margin-top: 10px;">
+					<h1 style="margin-top: 10px; font-size: 2.25rem; font-weight: 700; line-height: 1.2;">
 						Paul Wen
 					</h1>
 					<p class="ascii-lede" style="margin-top: 10px;">
-						Cloud + AI tech lead focused on building secure, compliant, and
-						maintainable software. I design end-to-end systems across frontend,
-						backend, and cloud—then ship them with strong engineering
-						discipline.
+						I build enterprise platforms that handle real-world complexity—AI-powered 
+						compliance systems, evaluation workflows for research funding, and 
+						modernised legacy infrastructure. Eight years shipping TypeScript, React, 
+						and Node.js in regulated environments where reliability and auditability aren't optional.
 					</p>
 				</div>
 				<pre
@@ -149,36 +149,39 @@ import LandingLayout from "../layouts/LandingLayout.astro";
 	<section class="ascii-section">
 		<p class="ascii-eyebrow">Highlights</p>
 		<h2 class="ascii-section-title" data-ascii-glitch>
-			Cloud Platforms, AI Workflows, Technical Leadership
+			What I've been building
 		</h2>
 		<p class="ascii-lede">
-			I build software for high-stakes workflows—where security, auditability,
-			and reliability matter. My work spans cloud-native services, enterprise
-			integrations, and AI-assisted automation in regulated environments.
-		</p>
-		<p class="ascii-lede">
-			I’m hands-on in delivery while leading architecture, setting expectations
-			with stakeholders, and mentoring engineers.
+			Most of my recent work has been in biotech research environments—building platforms
+			that need to be secure, auditable, and actually usable by scientists and researchers.
+			Think compliance reporting systems that can't afford to be wrong, evaluation tools 
+			that handle hundreds of funding decisions, and legacy systems that needed to move 
+			to the cloud without breaking critical workflows.
 		</p>
 		<div
 			class="ascii-surface ascii-surface--muted"
 			style="padding: 18px; margin-top: 14px;"
 		>
 			<p class="ascii-muted ascii-mono" style="margin: 0 0 10px;">
-				[ recent focus ]
+				[ recent projects ]
 			</p>
 			<ul class="ascii-list" style="line-height: 1.8;">
 				<li>
-					AI-powered reporting workflows with retrieval-augmented generation and
-					human-in-the-loop review.
+					<strong>AI compliance reporting:</strong> Built a Flask + React platform that uses RAG to generate 
+					audit-ready reports from experimental data. Databricks models pull in the right protocols 
+					at generation time, scientists review and approve. Turned a high-risk manual process into 
+					something traceable and repeatable.
 				</li>
 				<li>
-					Digitising evaluation and governance processes with role-based access
-					and traceable decision history.
+					<strong>External innovation platform:</strong> Led a team of two to replace Excel-based academic 
+					project evaluation with a proper workflow system. React + TypeScript + Node.js. Multi-stage 
+					reviews, role-based access, AI-powered sentiment analysis to surface consensus across ~100 concurrent 
+					submissions. Cut evaluation cycles by six days and gave leadership real-time visibility.
 				</li>
 				<li>
-					Modernising legacy platforms into cloud-aligned, API-first
-					architectures with CI/CD and quality gates.
+					<strong>Legacy modernisation:</strong> Migrated SharePoint 2013 systems to cloud-native architectures. 
+					Rebuilt UIs in React, refactored business logic into scalable services, implemented proper CI/CD. 
+					The boring work that keeps enterprises running.
 				</li>
 			</ul>
 		</div>

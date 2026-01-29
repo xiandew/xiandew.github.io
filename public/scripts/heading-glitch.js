@@ -267,7 +267,7 @@
 	}
 
 	const headings = Array.from(
-		document.querySelectorAll('[data-ascii-glitch], .ascii-section-title')
+		document.querySelectorAll('[data-ascii-glitch]')
 	);
 	for (const h of headings) ensureGlitchSpan(h);
 
