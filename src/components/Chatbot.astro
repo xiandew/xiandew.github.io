@@ -35,9 +35,13 @@
 			chatbot!.classList.toggle('visible');
 		}
 
-		function closeChat(e: Event) {
+		function closeChat(e?: Event) {
 			if (e) e.stopPropagation();
 			chatbot!.classList.remove('visible');
+		}
+
+		function openChat() {
+			chatbot!.classList.add('visible');
 		}
 
 		function handleOutsideClick(e: Event) {
@@ -51,11 +55,13 @@
 		toggleBtn.addEventListener('click', toggleChat);
 		closeBtn.addEventListener('click', closeChat);
 		document.addEventListener('click', handleOutsideClick);
+		document.addEventListener('open-chatbot', openChat);
 
 		return () => {
 			toggleBtn.removeEventListener('click', toggleChat);
 			closeBtn.removeEventListener('click', closeChat);
 			document.removeEventListener('click', handleOutsideClick);
+			document.removeEventListener('open-chatbot', openChat);
 		};
 	}
 
