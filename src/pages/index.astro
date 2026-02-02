@@ -1,314 +1,117 @@
 ---
+import { getCollection } from 'astro:content';
 import LandingLayout from "../layouts/LandingLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).slice(0, 3);
 ---
 
 <LandingLayout>
-	<script>
-		const avatar = document.querySelector('.ascii-avatar');
-		if (avatar) {
-			const originalText = avatar.textContent;
-			const lines = originalText.split('\n');
-			const density = ' .:-=+*#%@';
-			
-			function animate() {
-				const time = Date.now() * 0.0008;
-				const newLines = lines.map((line, y) => {
-					return line.split('').map((char, x) => {
-						// Plasma effect calculation
-						const value1 = Math.sin(x * 0.1 + time);
-						const value2 = Math.sin(y * 0.1 + time);
-						const value3 = Math.sin((x + y) * 0.08 + time);
-						const value4 = Math.sin(Math.sqrt(x * x + y * y) * 0.1 + time);
-						
-						const plasma = (value1 + value2 + value3 + value4) / 4;
-						const normalized = (plasma + 1) / 2; // normalize to 0-1
-						
-						// Get original character brightness
-						const originalBrightness = char === ' ' ? 0 : char === '.' ? 0.1 : 
-							char === ':' ? 0.2 : char === '-' || char === '=' ? 0.3 :
-							char === '+' || char === '*' ? 0.4 : char === '#' ? 0.6 :
-							char === '%' || char === '@' ? 0.8 : 0.5;
-						
-						// Modulate original brightness with plasma
-						const finalBrightness = originalBrightness * (0.7 + normalized * 0.6);
-						const index = Math.floor(finalBrightness * (density.length - 1));
-						
-						return density[Math.min(index, density.length - 1)];
-					}).join('');
-				});
-				
-				avatar.textContent = newLines.join('\n');
-				requestAnimationFrame(animate);
-			}
-			
-			animate();
-		}
-	</script>
-	<style>
-		@media (max-width: 768px) {
-			.ascii-avatar {
-				display: none !important;
-			}
-			.avatar-grid {
-				grid-template-columns: 1fr !important;
-			}
-		}
-	</style>
-	<section class="ascii-section">
-		<div class="ascii-surface" style="padding: 18px;">
-			<p class="ascii-muted ascii-mono" style="margin: 0;">[ Melbourne, AU ]</p>
-			<div
-				class="avatar-grid"
-				style="display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: stretch;"
-			>
-				<div style="display: flex; flex-direction: column; justify-content: center;">
-					<h1 style="margin-top: 10px; font-size: 2.25rem; font-weight: 700; line-height: 1.2;">
-						Paul Wen
-					</h1>
-					<p class="ascii-lede" style="margin-top: 10px;">
-						I build enterprise platforms that handle real-world complexity—AI-powered 
-						compliance systems, evaluation workflows for research funding, and 
-						modernised legacy infrastructure. Eight years shipping TypeScript, React, 
-						and Node.js in regulated environments where reliability and auditability aren't optional.
-					</p>
-				</div>
-				<pre
-					class="ascii-avatar"
-					style="margin: 0; line-height: 1; font-size: 3px; font-family: monospace; white-space: pre; color: var(--muted); height: 100%; display: flex; align-items: center;">....................................................................................................
-....................................................................................................
-.........................................................::.:...:...................................
-...................................................::.:::::@@@@@@@@..:..............................
-..................................................:::=-*@@@@@@@@@@@@@:.:............................
-..................................................%@@@@@@@@@@@@@@@@@@@@#............................
-.................................................:@@@@@@@@@@@@@@@@@@@@@@@%..........................
-.................................................*@@@@@@@@@@@@@@@@@@@@@@@@@.........................
-.................................................=@@@@@@@@@@@%::::::@@@@@@@*........................
-................................................:.@@@@@@@@#:::::::::+@@@@@@@:.......................
-..................................................:@@::::::::::::::::*@@@@@@+.......................
-..................................................:+-::::::::::::::::::@@@@@:::.....................
-..................................................:+-::::::::::::::::=%%%%-::::::...................
-..................................................:#-::::::::::*+-:-%+:::#:::::::...................
-....................................................=::::::+#:......:+:::-=::::::...................
-...................................................:=#-::-#%#.......:+::::#::::.:...................
-................................................:.%:::...:+::=-:...:*::::::::::::...................
-.................................................::%:....::::::::::::::::::::::::...................
-...................................................:--..:+::::::::::::::::::::::....................
-.......................................................--:::::::::::::::::::::::::..................
-........................................................:-:::::::::::::::::::::::@@-:...............
-.........................................................:=::::::::::::::::::::.%@@@@%::::..........
-..........................................................:=::::::::::::::::::.-@@@@@@@@@@*:.:......
-............................................................:::::::::::::--::..@@@@@@@@@@@@@@=::....
-..............................................................-::::::::----...@@@@@@@@@@@@@@@@@=::..
-..............................................................:::-:::::--....#@@@@@@@@@@@@@@@@@@@:..
-.:..:..:::.:::...............................................:.*@@@+:-::. ..-@@@@@@@@@@@@@@@@@@@@@+:
-#############:...............................................:@@@@@*:-..  ..@@@@@@@@@@@@@@@@@@@@@@@@
-###########*+#:.............................................:@@@@@@+%......@@@@@@@@@@@@@@@@@@@@@@@@@
-++++==+++=++++*.............................................=@@@@@%*%%%%*.-@@@@@@@@@@@@@@@@@@@@@@@@@
-+++++++++++++++:............................................#@@@@@.%%###%.@@@@@@@@@@@@@@@@@@@@@@@@@@
-+++++++++++++++#............................................*@@@@-.%###%.@@@@@@@@@@@@@@@@@@@@@@@@@@@
-**++++++++++++++-...........................................+@@@#.:####.=@@@@@@@@@@@@@@@@@@@@@@@@@@@
-***+++++++++++++*...........................................=@@@..#####.@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-****++++++++++++=*:.........................................+@@@..%###*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-*****+++++++++++++:.........................................*@@@++%###*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-*******+++++++++++*.........................................#@@@#%%##*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-********+=+++++++++=........................................@@@@*%%%#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-**********++++++++++:..................................:..:+@@@@#%%%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-***********+++++++++*...............::..............:::*@@@@@@@@%%%%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-************+++++++++:.......:::::::::::::::....%@@@@@@@@@@@@@@@%%%%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-**************+++++++#.....:::::::::::::::::::....@@@@@@@@@@@@@@%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-***************+++++*#=:.:::::::::::::::::::::..  @@@@@@@@@@@@@@@%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-***************########=::::::::::::::::::::::....@@@@@@@@@@@@@@@%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-**********################:::::*##%###+---=+-:..:@@@@@@@@@@%%@@@@%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-*****###########**######-:::::::::::::###############=::::::::-@@%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-###########***#########::::::::::::::::::+%########=:::::::::::-@@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-######***#############::::::::::::::::::::::::......+%@@@@@%--:--@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-#####################-::###-:::::::::::::::::.....:@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-**####################+#######=----:::::::::.....*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-+***********************##########=------:::... .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-::::----:---=+*###*******************#--:::::...+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-:::::::::::::::::::::::::::::::::::::-::::::::..#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-::::::::::::::::::::::::::::::::::::::::::::::::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-::::::::::::::::::::::::::::::::::::::::::::::::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</pre>
-			</div>
-			<hr class="ascii-rule" style="margin: 16px 0;" />
-			<div
-				style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;"
-			>
-				<a class="ascii-mono" href="#contact">[ get in touch ]</a>
-				<a class="ascii-muted ascii-mono" href="/blog">[ read blog ]</a>
-				<a
-					class="ascii-muted ascii-mono"
-					href="https://linkedin.com/in/xiandew"
-					target="_blank"
-					rel="noopener">[ linkedin ]</a
-				>
-			</div>
-		</div>
-	</section>
+	<!-- Hero Section -->
+	<section class="hero">
+		<!-- Plasma Avatar Container -->
 
-	<section class="ascii-section">
-		<p class="ascii-eyebrow">Highlights</p>
-		<h2 class="ascii-section-title" data-ascii-glitch>
-			What I've been building
-		</h2>
-		<p class="ascii-lede">
-			Most of my recent work has been in biotech research environments—building platforms
-			that need to be secure, auditable, and actually usable by scientists and researchers.
-			Think compliance reporting systems that can't afford to be wrong, evaluation tools 
-			that handle hundreds of funding decisions, and legacy systems that needed to move 
-			to the cloud without breaking critical workflows.
-		</p>
-		<div
-			class="ascii-surface ascii-surface--muted"
-			style="padding: 18px; margin-top: 14px;"
-		>
-			<p class="ascii-muted ascii-mono" style="margin: 0 0 10px;">
-				[ recent projects ]
+		<div class="site-container">
+			<h1>Paul (Xiande) Wen</h1>
+			<p class="lead">
+				Full Stack + Cloud + AI tech lead building scalable, intelligent, and high-performance software solutions.
 			</p>
-			<ul class="ascii-list" style="line-height: 1.8;">
-				<li>
-					<strong>AI compliance reporting:</strong> Built a Flask + React platform that uses RAG to generate 
-					audit-ready reports from experimental data. Databricks models pull in the right protocols 
-					at generation time, scientists review and approve. Turned a high-risk manual process into 
-					something traceable and repeatable.
-				</li>
-				<li>
-					<strong>External innovation platform:</strong> Led a team of two to replace Excel-based academic 
-					project evaluation with a proper workflow system. React + TypeScript + Node.js. Multi-stage 
-					reviews, role-based access, AI-powered sentiment analysis to surface consensus across ~100 concurrent 
-					submissions. Cut evaluation cycles by six days and gave leadership real-time visibility.
-				</li>
-				<li>
-					<strong>Legacy modernisation:</strong> Migrated SharePoint 2013 systems to cloud-native architectures. 
-					Rebuilt UIs in React, refactored business logic into scalable services, implemented proper CI/CD. 
-					The boring work that keeps enterprises running.
-				</li>
-			</ul>
+			
+
 		</div>
+
+		<a href="#expertise" class="scroll-indicator" aria-label="Scroll to expertise">
+			<div class="mouse">
+				<div class="wheel"></div>
+			</div>
+			<div class="arrow">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</a>
 	</section>
 
-	<hr class="ascii-rule" />
 
-	<section class="ascii-section">
-		<p class="ascii-eyebrow">Expertise</p>
-		<h2 class="ascii-section-title" data-ascii-glitch>Technical Skills</h2>
-		<div
-			class="ascii-surface ascii-surface--muted"
-			style="padding: 18px; margin-top: 14px;"
-		>
-			<div
-				style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));"
-			>
-				<div>
-					<p style="margin: 0; font-weight: 700;">Frontend & UI Development</p>
-					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-						React, TypeScript, Next.js, component-driven architecture,
-						responsive UI patterns, SPFx, PCF.
-					</p>
+	<!-- Expertise Section -->
+	<section id="expertise" class="section">
+		<div class="site-container">
+			<div class="section-header">
+				<div class="subtitle">Skills & Technologies</div>
+				<h2>My Expertise</h2>
+			</div>
+
+			<div class="expertise-grid">
+				<!-- Full Stack -->
+				<div class="expertise-card">
+					<span class="icon">⚡</span>
+					<h3>Full-Stack Application Development</h3>
+					<p>Building secure, end-to-end web applications with modern frameworks. Focused on performance, testing, and reliability.</p>
+					<div class="skills-list">
+						<span class="skill-tag">TypeScript</span>
+						<span class="skill-tag">React</span>
+						<span class="skill-tag">Next.js</span>
+						<span class="skill-tag">Jest/Playwright</span>
+						<span class="skill-tag">Tailwind</span>
+					</div>
 				</div>
-				<div>
-					<p style="margin: 0; font-weight: 700;">Backend & APIs</p>
-					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-						Node.js, Express, REST APIs, GraphQL, PostgreSQL, MongoDB,
-						service-oriented architecture.
-					</p>
+
+				<!-- Cloud & Infrastructure -->
+				<div class="expertise-card">
+					<span class="icon">☁️</span>
+					<h3>Cloud Infrastructure & Architecture</h3>
+					<p>Architecting scalable, secure cloud solutions on AWS. Managing complex pipelines, identity, and infrastructure as code.</p>
+					<div class="skills-list">
+						<span class="skill-tag">AWS</span>
+						<span class="skill-tag">Terraform</span>
+						<span class="skill-tag">Docker</span>
+						<span class="skill-tag">CI/CD</span>
+						<span class="skill-tag">OAuth2/OIDC</span>
+					</div>
 				</div>
-				<div>
-					<p style="margin: 0; font-weight: 700;">Cloud & DevOps</p>
-					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-						Azure, AWS, Docker, CI/CD, IAM/RBAC, secure LLM inference pipelines.
-					</p>
-				</div>
-				<div>
-					<p style="margin: 0; font-weight: 700;">Testing & Quality</p>
-					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-						Jest, React Testing Library, Cypress/Playwright, performance
-						profiling, UI optimisation.
-					</p>
-				</div>
-				<div>
-					<p style="margin: 0; font-weight: 700;">Security & Identity</p>
-					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-						OAuth2/OIDC, Azure AD, role-based access control, secure API design.
-					</p>
-				</div>
-				<div>
-					<p style="margin: 0; font-weight: 700;">AI & Data Platforms</p>
-					<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-						LLM integration, RAG, prompt engineering, Databricks ML,
-						human-in-the-loop workflows.
-					</p>
+
+				<!-- AI & Data -->
+				<div class="expertise-card">
+					<span class="icon">🤖</span>
+					<h3>AI-Powered Solutions</h3>
+					<p>Implementing AI-driven workflows, intelligent automation, and secure data-intensive applications.</p>
+					<div class="skills-list">
+						<span class="skill-tag">Python</span>
+						<span class="skill-tag">LLM Integration</span>
+						<span class="skill-tag">RAG</span>
+						<span class="skill-tag">Data Pipelines</span>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<hr class="ascii-rule" />
+	<!-- Recent Writing (List Layout) -->
+	<section class="section">
+		<div class="site-container">
+			<div class="section-header">
+				<div class="subtitle">Thoughts & Notes</div>
+				<h2>Recent Writing</h2>
+			</div>
 
-	<section class="ascii-section">
-		<p class="ascii-eyebrow">Values</p>
-		<h2 class="ascii-section-title" data-ascii-glitch>
-			Professional Competencies
-		</h2>
-		<div
-			style="display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 14px;"
-		>
-			<div class="ascii-surface" style="padding: 14px;">
-				<p style="margin: 0; font-weight: 700;">Leadership</p>
-				<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-					Technical leadership, sprint planning, mentoring.
-				</p>
+			<div class="post-list">
+				{posts.map((post) => (
+					<a href={`/blog/${post.id}/`} class="post-item">
+						<div class="post-meta">
+							<FormattedDate date={post.data.pubDate} />
+						</div>
+						<h3 class="post-title">{post.data.title}</h3>
+						<div class="post-arrow">→</div>
+					</a>
+				))}
 			</div>
-			<div class="ascii-surface" style="padding: 14px;">
-				<p style="margin: 0; font-weight: 700;">Solution Design</p>
-				<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-					Requirements engineering, architecture, security implementation.
-				</p>
-			</div>
-			<div class="ascii-surface" style="padding: 14px;">
-				<p style="margin: 0; font-weight: 700;">Stakeholder Management</p>
-				<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-					Cross-functional collaboration, client consultation, expectations.
-				</p>
-			</div>
-			<div class="ascii-surface" style="padding: 14px;">
-				<p style="margin: 0; font-weight: 700;">Problem Solving</p>
-				<p class="ascii-muted" style="margin: 8px 0 0; line-height: 1.7;">
-					Analytical thinking, pragmatic troubleshooting, optimisation.
-				</p>
-			</div>
-		</div>
-	</section>
 
-	<hr class="ascii-rule" />
-
-	<section id="contact" class="ascii-section">
-		<p class="ascii-eyebrow">Contact</p>
-		<h2 class="ascii-section-title" data-ascii-glitch>Get in touch</h2>
-		<p class="ascii-lede">
-			Open to new projects, interesting problems, and opportunities to
-			collaborate.
-		</p>
-		<div class="ascii-surface" style="padding: 14px; margin-top: 14px;">
-			<p class="ascii-muted ascii-mono" style="margin: 0 0 10px;">
-				[ channels ]
-			</p>
-			<div style="display: flex; flex-wrap: wrap; gap: 12px;">
-				<a class="ascii-mono" href="mailto:xiandepaul.wen@gmail.com"
-					>[ email ]</a
-				>
-				<a
-					class="ascii-mono"
-					href="https://linkedin.com/in/xiandew"
-					target="_blank"
-					rel="noopener">[ linkedin ]</a
-				>
-				<a
-					class="ascii-mono"
-					href="https://github.com/xiandew"
-					target="_blank"
-					rel="noopener">[ github ]</a
-				>
+			<div style="text-align: center; margin-top: 60px;">
+				<a href="/blog" class="btn-primary" style="background: transparent; border: 1px solid var(--border); color: var(--fg);">
+					Read All Posts
+				</a>
 			</div>
 		</div>
 	</section>

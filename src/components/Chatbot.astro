@@ -1,0 +1,69 @@
+<div class="chatbot-container" id="chatbot">
+	<div class="chatbot-interface">
+		<div class="chat-header">
+			<div class="avatar-small">PW</div>
+			<div class="status">Paul Wen<br><span>Replied just now</span></div>
+			<button class="close-chat" id="close-chat">✕</button>
+		</div>
+		<div class="chat-messages">
+			<div class="message from-bot">
+				Hello! Thanks for reaching out.
+			</div>
+			<div class="message from-bot" style="animation-delay: 0.2s">
+				I'm currently open to new opportunities. How would you like to connect?
+			</div>
+		</div>
+		<div class="chat-options">
+			<a href="mailto:xiandepaul.wen@gmail.com" class="chat-option">Send me an email</a>
+			<a href="https://linkedin.com/in/xiandew" target="_blank" class="chat-option">Connect on LinkedIn</a>
+			<a href="https://github.com/xiandew" target="_blank" class="chat-option">View GitHub Profile</a>
+		</div>
+	</div>
+</div>
+
+<script>
+	// Init function to handle event listeners
+	function initChatbot() {
+		const toggleBtn = document.getElementById('nav-contact-link');
+		const closeBtn = document.getElementById('close-chat');
+		const chatbot = document.getElementById('chatbot');
+
+		if (!toggleBtn || !closeBtn || !chatbot) return;
+
+		function toggleChat(e: Event) {
+			if (e) e.stopPropagation();
+			chatbot!.classList.toggle('visible');
+		}
+
+		function closeChat(e: Event) {
+			if (e) e.stopPropagation();
+			chatbot!.classList.remove('visible');
+		}
+
+		function handleOutsideClick(e: Event) {
+			if (chatbot!.classList.contains('visible') && 
+				!chatbot!.contains(e.target as Node) && 
+				e.target !== toggleBtn) {
+				chatbot!.classList.remove('visible');
+			}
+		}
+
+		toggleBtn.addEventListener('click', toggleChat);
+		closeBtn.addEventListener('click', closeChat);
+		document.addEventListener('click', handleOutsideClick);
+
+		return () => {
+			toggleBtn.removeEventListener('click', toggleChat);
+			closeBtn.removeEventListener('click', closeChat);
+			document.removeEventListener('click', handleOutsideClick);
+		};
+	}
+
+	// Initialize on load and re-initialize on page navigation
+	let cleanup = initChatbot();
+	
+	document.addEventListener('astro:page-load', () => {
+		if (cleanup) cleanup();
+		cleanup = initChatbot();
+	});
+</script>

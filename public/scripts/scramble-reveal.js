@@ -76,7 +76,7 @@
 
 	function ensureGlitchSpan(heading) {
 		if (!(heading instanceof HTMLElement)) return null;
-		if (heading.querySelector('.ascii-glitch-word')) return heading.querySelector('.ascii-glitch-word');
+		if (heading.querySelector('.glitch-word')) return heading.querySelector('.glitch-word');
 
 		const originalText = heading.textContent || '';
 		const split = splitLastWord(originalText);
@@ -86,16 +86,16 @@
 		if (split.before) heading.appendChild(document.createTextNode(split.before));
 
 		const wrapper = document.createElement('span');
-		wrapper.className = 'ascii-glitch-word';
+		wrapper.className = 'glitch-word';
 		wrapper.dataset.target = split.word;
 
 		const measure = document.createElement('span');
-		measure.className = 'ascii-glitch-measure';
+		measure.className = 'glitch-measure';
 		measure.setAttribute('aria-hidden', 'true');
 		measure.textContent = split.word;
 
 		const overlay = document.createElement('span');
-		overlay.className = 'ascii-glitch-overlay';
+		overlay.className = 'glitch-overlay';
 		overlay.textContent = split.word;
 
 		wrapper.appendChild(measure);
@@ -240,17 +240,17 @@
 	function trigger(heading) {
 		const wrapper = ensureGlitchSpan(heading);
 		if (!wrapper) return;
-		if (wrapper.dataset.asciiGlitchRunning === '1') return;
-		wrapper.dataset.asciiGlitchRunning = '1';
-		wrapper.dataset.asciiGlitchHasRun = '1';
+		if (wrapper.dataset.glitchRunning === '1') return;
+		wrapper.dataset.glitchRunning = '1';
+		wrapper.dataset.glitchHasRun = '1';
 
 		const target = wrapper.dataset.target || wrapper.textContent || '';
-		const overlay = wrapper.querySelector('.ascii-glitch-overlay') || wrapper;
+		const overlay = wrapper.querySelector('.glitch-overlay') || wrapper;
 
-		wrapper.classList.add('ascii-glitching');
+		wrapper.classList.add('glitching');
 
-		if (typeof wrapper.__asciiGlitchStop === 'function') wrapper.__asciiGlitchStop();
-		wrapper.__asciiGlitchStop = scrambleAppear(overlay, target, {
+		if (typeof wrapper.__glitchStop === 'function') wrapper.__glitchStop();
+		wrapper.__glitchStop = scrambleAppear(overlay, target, {
 			speed: DEFAULT_SPEED,
 			scrambledLetters: DEFAULT_SCRAMBLED_LETTERS,
 			mode: DEFAULT_MODE,
@@ -259,15 +259,15 @@
 		const tickMs = intervalMsFromSpeed(DEFAULT_SPEED);
 		const durationMs = tickMs * (String(target).length + DEFAULT_SCRAMBLED_LETTERS);
 		window.setTimeout(() => {
-			wrapper.classList.remove('ascii-glitching');
+			wrapper.classList.remove('glitching');
 			overlay.textContent = target;
-			if (typeof wrapper.__asciiGlitchStop === 'function') wrapper.__asciiGlitchStop();
-			wrapper.__asciiGlitchStop = null;
+			if (typeof wrapper.__glitchStop === 'function') wrapper.__glitchStop();
+			wrapper.__glitchStop = null;
 		}, Math.ceil(durationMs + 60));
 	}
 
 	const headings = Array.from(
-		document.querySelectorAll('[data-ascii-glitch]')
+		document.querySelectorAll('[data-glitch]')
 	);
 	for (const h of headings) ensureGlitchSpan(h);
 
@@ -275,8 +275,8 @@
 		(entries) => {
 			for (const entry of entries) {
 				if (!entry.isIntersecting) {
-					const span = entry.target?.querySelector?.('.ascii-glitch-word');
-					if (span) span.dataset.asciiGlitchRunning = '0';
+					const span = entry.target?.querySelector?.('.glitch-word');
+					if (span) span.dataset.glitchRunning = '0';
 					continue;
 				}
 				trigger(entry.target);

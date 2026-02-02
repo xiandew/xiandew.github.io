@@ -10,18 +10,18 @@ const posts = (await getCollection('blog')).sort(
 
 <SpotlightLayout title={`Blog - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
 	<div>
-		<p class="ascii-eyebrow">Blog</p>
-		<h1 class="ascii-section-title" data-ascii-glitch>
+		<p class="subtitle">Blog</p>
+		<h1 class="section-title" data-glitch>
 			Signals in the noise.
 		</h1>
-		<p class="ascii-lede">
+		<p class="lead">
 			Long-form thoughts on programming, leadership, product design, and more.
 		</p>
 
 		<div style="margin-top: 18px; display: grid; gap: 12px;">
 			{posts.map((post) => (
-				<article class="ascii-surface" style="padding: 14px;">
-					<p class="ascii-muted" style="margin: 0;">
+				<article class="panel" style="padding: 14px;">
+					<p class="text-muted" style="margin: 0;">
 						{post.data.pubDate.toLocaleDateString('en-us', {
 							year: 'numeric',
 							month: 'long',
@@ -31,10 +31,10 @@ const posts = (await getCollection('blog')).sort(
 					<p style="margin: 10px 0 0; font-weight: 700;">
 						<a href={`/blog/${post.id}/`}>{post.data.title}</a>
 					</p>
-					<p class="ascii-muted" style="margin: 10px 0 0; line-height: 1.7;">
+					<p class="text-muted" style="margin: 10px 0 0; line-height: 1.7;">
 						{post.data.description}
 					</p>
-				<p class="ascii-muted ascii-mono" style="margin: 10px 0 0;">
+				<p class="text-muted font-mono" style="margin: 10px 0 0;">
 					<a href={`/blog/${post.id}/`}>[ read → ]</a>
 				</p>
 				</article>

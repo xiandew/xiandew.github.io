@@ -1,54 +1,45 @@
 ---
-const today = new Date();
 ---
 
-<footer class="ascii-footer" id="footer">
-	<div class="ascii-container">
-		<div class="ascii-footer__grid">
-			<div>
-				<p class="ascii-brand">Paul Wen</p>
-				<p class="ascii-muted" style="margin: 10px 0 0; line-height: 1.6;">
-					Cloud + AI tech lead focused on building secure, compliant, and maintainable software.
-				</p>
-			</div>
-			<div>
-				<p class="ascii-muted ascii-mono" style="margin: 0 0 10px;">[ links ]</p>
-				<div style="display: grid; gap: 8px;">
-					<a href="/">Home</a>
-					<a href="/blog">Blog</a>
-					<a href="/about">About</a>
-				</div>
-			</div>
-			<div>
-				<p class="ascii-muted ascii-mono" style="margin: 0 0 10px;">[ connect ]</p>
-				<div style="display: grid; gap: 8px;">
-					<a href="mailto:xiandepaul.wen@gmail.com" style="display: flex; align-items: center; gap: 8px;">
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-							<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-							<polyline points="22,6 12,13 2,6"></polyline>
-						</svg>
-						<span>Email</span>
-					</a>
-					<a href="https://github.com/xiandew" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px;">
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-							<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-						</svg>
-						<span>GitHub</span>
-					</a>
-					<a href="https://linkedin.com/in/xiandew" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px;">
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-							<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-							<rect x="2" y="9" width="4" height="12"></rect>
-							<circle cx="4" cy="4" r="2"></circle>
-						</svg>
-						<span>LinkedIn</span>
-					</a>
-				</div>
-			</div>
+<footer class="site-footer" id="footer">
+	<div class="site-container">
+		<div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+			<a href="mailto:xiandepaul.wen@gmail.com" class="footer-link">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+					<polyline points="22,6 12,13 2,6"></polyline>
+				</svg>
+				<span>Email</span>
+			</a>
+			<a href="https://github.com/xiandew" target="_blank" rel="noopener" class="footer-link">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+				</svg>
+				<span>GitHub</span>
+			</a>
+			<a href="https://linkedin.com/in/xiandew" target="_blank" rel="noopener" class="footer-link">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+					<rect x="2" y="9" width="4" height="12"></rect>
+					<circle cx="4" cy="4" r="2"></circle>
+				</svg>
+				<span>LinkedIn</span>
+			</a>
 		</div>
-		<hr class="ascii-rule" style="margin: 22px 0;" />
-		<p class="ascii-muted" style="margin: 0; font-size: 0.95rem;">
-			&copy; {today.getFullYear()} Paul Wen. All rights reserved.
-		</p>
 	</div>
 </footer>
+
+<style>
+	.footer-link {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		color: var(--muted);
+		transition: color 0.2s ease;
+	}
+
+	.footer-link:hover {
+		color: var(--fg);
+		text-decoration: none;
+	}
+</style>

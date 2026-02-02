@@ -1,21 +1,24 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Chatbot from "../components/Chatbot.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="h-full antialiased scroll-smooth">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
     <body>
         <Header />
-        <main class="ascii-container" style="padding: 28px var(--space) 56px;">
+        <main class="site-container" style="padding: 120px var(--space) 56px;">
             <slot />
         </main>
         <Footer />
+        <Chatbot />
     </body>
+</html>

@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Chatbot from '../components/Chatbot.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
@@ -14,9 +15,10 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<main class="ascii-container" style="padding: 28px var(--space) 56px;">
+		<main>
 			<slot />
 		</main>
 		<Footer />
+		<Chatbot />
 	</body>
 </html>
