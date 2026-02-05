@@ -6,9 +6,9 @@ author: "Xiande Wen"
 tags: ["jekyll", "search", "javascript", "static-site", "tutorial"]
 ---
 
-A search functionality is basically a fundamental part of a website. It can be pretty
-handy when trying to find something specific.
-<!--more-->
+Search functionality is essential for any content-rich website, helping visitors quickly find specific articles or topics.
+
+For static sites like Jekyll, traditional server-side search isn't possible—but **client-side search** works beautifully. The entire search index (a JSON file) is downloaded once, and searches happen instantly in the browser with no backend needed.
 
 With Simple-Jekyll-Search plugin, a workable search functionality can be setup
 in a few steps. Here is how I implement it in this current site.

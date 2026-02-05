@@ -6,7 +6,7 @@ author: "Xiande Wen"
 tags: ["javascript", "game", "web-development", "project", "tutorial"]
 ---
 
-You can play it [here]({{ site.url | append: '/GuessTheWord/' }}).
+You can play it [here](https://xiandew.github.io/GuessTheWord/).
 
 # **Specification**
 

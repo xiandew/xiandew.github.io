@@ -6,6 +6,12 @@ author: "Xiande Wen"
 tags: ["javascript", "performance", "object-pool", "garbage-collection", "game-development"]
 ---
 
+In games and real-time applications, smooth frame rates are critical. A single garbage collection pause can cause visible stuttering that ruins the user experience.
+
+**Object pooling** is a design pattern that helps eliminate these pauses by recycling objects instead of creating and destroying them constantly.
+
+# **The Garbage Collection Problem**
+
 > JavaScript’s memory model is built on a technology known as a Garbage Collector. In many languages, the programmer is directly responsible for allocating and freeing memory from the system’s Memory Heap. A Garbage Collector system, however, manages this task on behalf of the programmer, meaning that objects aren’t directly freed from memory when the programmer dereferences it, but rather at a later time when the GC’s heuristics decide that it would be beneficial to do so. This decision process requires that the GC execute some statistical analysis on active and inactive objects, which takes a block of time to perform.
 >
 >  The process in which a GC reclaims memory is not free, it usually cuts into your available performance by taking a block of time to do its work; alongside that, the system itself makes the decision when to run. You have no control over this action, a GC pulse can occur at any time during code execution, which will block code execution until it’s completed. The duration of this pulse is generally unknown to you; will take some amount of time to run, depending on how your program is utilizing memory at any given point.

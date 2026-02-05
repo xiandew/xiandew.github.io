@@ -6,9 +6,14 @@ author: "Xiande Wen"
 tags: ["javascript", "es6", "functions", "best-practices", "tutorial"]
 ---
 
-**Default function parameters** allow named parameters to be initialized with default values if no value or `undefined` is passed.
+**Default function parameters** allow named parameters to be initialized with default values if no value or `undefined` is passed. This ES6 feature makes functions more robust, readable, and less error-prone.
 
-<!--more-->
+# **Why Use Default Parameters?**
+
+1. **Cleaner code** — No more verbose `typeof` checks
+2. **Better API design** — Clear expectations for optional arguments
+3. **Fewer bugs** — Prevent unexpected `undefined` values from causing `NaN` or errors
+4. **Self-documenting** — The default value serves as inline documentation
 
 # **Syntax**
 

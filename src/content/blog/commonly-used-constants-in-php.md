@@ -6,9 +6,14 @@ author: "Xiande Wen"
 tags: ["php", "constants", "reference", "best-practices", "tutorial"]
 ---
 
-> These constants are defined by the PHP core.
+PHP provides several predefined constants that help write portable, robust code. Using these constants instead of hardcoded values ensures your code works correctly across different systems and PHP versions.
 
-<!--more-->
+**Why use these constants?**
+- **Cross-platform compatibility** — Different operating systems use different line endings
+- **Future-proofing** — Integer sizes vary between 32-bit and 64-bit systems
+- **Precision** — Float constants help with numerical accuracy
+
+Here are the most commonly used core constants:
 
 | Constant | Description |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

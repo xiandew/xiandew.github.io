@@ -6,6 +6,16 @@ author: "Xiande Wen"
 tags: ["linux", "firewalld", "security", "devops", "cheat-sheet"]
 ---
 
+**firewalld** is the modern firewall management tool in RHEL/CentOS/Fedora systems, replacing the older `iptables` service. It offers a more intuitive interface through the `firewall-cmd` command-line tool.
+
+**Key advantages:**
+- **Dynamic updates** — Change rules without restarting the firewall
+- **Zone-based** — Group rules by trust level (public, work, home, etc.)
+- **Service definitions** — Open ports by service name instead of memorizing port numbers
+- **Runtime vs Permanent** — Test changes before making them permanent
+
+This guide covers the most commonly used commands for managing firewalld.
+
 > The command-line tool **firewall-cmd** is part of the **firewalld** application, which is installed by default. It can be used to make permanent and non-permanent runtime changes. Enter the following command to view the help output.
 >
 > # **Installing firewalld**

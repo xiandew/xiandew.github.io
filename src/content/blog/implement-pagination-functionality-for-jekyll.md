@@ -6,15 +6,14 @@ author: "Xiande Wen"
 tags: ["jekyll", "pagination", "liquid", "static-site", "tutorial"]
 ---
 
-> Creativity loves constraints and simplicity is at our core. Tweets are limited to 140 characters so they can be consumed easily anywhere, even via mobile text messages. There’s no magical length for a Tweet, but a recent report by Buddy Media revealed that Tweets shorter than 100 characters get a 17% higher engagement rate.
+As your blog grows, a single page listing all posts becomes overwhelming. Users face slow load times, endless scrolling, and cognitive overload.
 
-<!--more-->
+**Pagination** solves this by breaking content into digestible chunks:
+- **Faster page loads** — Fewer posts per page means less HTML and images
+- **Better UX** — Clear navigation between pages
+- **Professional appearance** — Shows you care about user experience
 
-From the above lines, you probably feel that the length of your webpage is important
-for a better user experience. Blog pages with long lists can be very annoying.
-Perfect page length not only brings comfort to users but also
-shows a clear web page structure. That's why pagination is necessary for
-a blog website.
+Jekyll's `jekyll-paginate` plugin makes this straightforward. Let's implement it.
 
 Here is how to implement with Jekyll.
 

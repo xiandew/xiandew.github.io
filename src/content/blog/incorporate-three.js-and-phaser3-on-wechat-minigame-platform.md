@@ -14,7 +14,7 @@ Basically what we need to do is that:
 
 # **1. Setup Phaser3 on WeChat Minigame Platform**
 
-Please refer to [ Run Phaser3 on WeChat Minigame Platform ](/game dev/2021/01/04/Run-Phaser3-on-WeChat-Minigame-Platform.html).
+Please refer to [Run Phaser3 on WeChat Minigame Platform](/blog/run-phaser3-on-wechat-minigame-platform).
 
 *Note： It is important to set the `type` in the game config to `Phaser.WEBGL` since we can only draw Three.js onto Phaser when they're on the same context*
 

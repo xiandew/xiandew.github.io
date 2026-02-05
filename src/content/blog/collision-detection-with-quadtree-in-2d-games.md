@@ -10,6 +10,19 @@ Collision detection is an essential part in game development, whose computations
 often involves inefficient complexity. Many algorithms have been introduced for
 optimisation. One of the algorithms that I found simple to adopt is QuadTree.
 
+# **Why QuadTrees?**
+
+In a game with many moving objects, checking every object against every other object for collision (checking $N$ objects against $N-1$ others) results in a time complexity of $O(N^2)$. As the number of objects increases, performance drops drastically.
+
+A **QuadTree** helps by solving the "broad-phase" of collision detection. Instead of checking everything, we only check objects that are near each other. It does this by recursively dividing spatial regions into four quadrants.
+
+1.  **Partitioning**: The 2D space is divided into four squares.
+2.  **Insertion**: Objects are inserted into the node that contains them.
+3.  **Subdivision**: If a node contains too many objects, it splits into four sub-nodes, and objects are moved into children nodes.
+4.  **Retrieval**: To check for collisions for a specific object, you allow the QuadTree to return only the objects located in the same quadrant(s).
+
+This reduces the number of checks significantly, typically to $O(N \log N)$ or better depending on distribution.
+
 # **Introduction**
 
 > A quadtree is a tree data structure in which each internal node has exactly four children. Quadtrees are the two-dimensional analog of octrees and are most often used to partition a two-dimensional space by recursively subdividing it into four quadrants or regions. The data associated with a leaf cell varies by application, but the leaf cell represents a "unit of interesting spatial information".

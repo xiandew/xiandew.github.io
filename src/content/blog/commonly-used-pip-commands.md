@@ -8,8 +8,6 @@ tags: ["python", "pip", "package-management", "cheat-sheet", "tutorial"]
 
 > pip is a package management system used to install and manage software packages written in Python. Many packages can be found in the default source for packages and their dependencies — Python Package Index (PyPI).
 
-<!--more-->
-
 # **List all installed modules**
 
 ```python

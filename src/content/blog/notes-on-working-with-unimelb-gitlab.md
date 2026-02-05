@@ -6,30 +6,11 @@ author: "Xiande Wen"
 tags: ["git", "gitlab", "troubleshooting", "version-control", "tutorial"]
 ---
 
-This semester, I am doing the subject COMP30020 Computer systems which is one of the unimelb core subjects for computer science. As one of its lab tasks, working with the unimelb gitlab is pretty straightforward by following the spec. However, some details may require our attentions to avoid unnecessary scratches. You can find the lab spec from [here](https://www.dropbox.com/s/2pfaj1uvypk29y1/lab-3.pdf?dl=0).
+Working with institutional GitLab instances can be tricky if you're not familiar with their specific URL requirements. Here's a common issue I encountered with University of Melbourne's GitLab and how to fix it.
 
-One problem that I have encountered is as following. By the way, I am using Windows
-which means that situations may be different from unix-based systems.
+# **The Problem: Push Redirect Error**
 
-After I created a local git project, added files to the local git repository and
-commit the changes, an error occured when I tried to push the changes.
-
-# **What I did**
-
-I linked the remote git repository by
-
-```bash
-git remote add origin "https://gitlab.eng.unimelb.edu.au/xiandew/comp30023-lab-3"
-```
-
-It showed nothing on the command line when entered the line and seemed to be correct.
-But when I tried to push changes by
-
-```bash
-git push -u origin master
-```
-
-An error jumped out
+When trying to push to a GitLab repository, you might encounter:
 
 ```bash
 fatal: unable to update url base from redirection:
@@ -37,41 +18,52 @@ fatal: unable to update url base from redirection:
    redirect: https://gitlab.eng.unimelb.edu.au/users/sign_in
 ```
 
-After I read the spec again, I found that the right way to link the remote gitlab
-repository should be
+# **The Cause**
+
+I had added the remote without the `.git` extension:
 
 ```bash
+# ❌ Wrong - missing .git
+git remote add origin "https://gitlab.eng.unimelb.edu.au/xiandew/comp30023-lab-3"
+```
+
+The correct URL should include `.git` at the end:
+
+```bash
+# ✅ Correct
 git remote add origin "https://gitlab.eng.unimelb.edu.au/xiandew/comp30023-lab-3.git"
 ```
 
-Note `.git` at the end of line.
+# **The Solution**
 
-But when I tried to add the reomte repository again by the corrent code, It showed
+If you've already added the wrong remote URL, you'll get this error when trying to add it again:
 
 ```bash
 fatal: remote origin already exists.
 ```
 
-# **What I should have done**
+**Fix it in two steps:**
 
-After consulting the tutor and browsing the discussion forum, I got the following
-solution.
-
-If you have added a wrong remote link to a git repo, what you have to do first before
-adding the correct one is removing the wrong one first by
+**1. Remove the incorrect remote:**
 
 ```bash
 git remote remove origin
 ```
 
-After that, add the correct remote. In my case,
+**2. Add the correct remote:**
 
 ```bash
 git remote add origin "https://gitlab.eng.unimelb.edu.au/xiandew/comp30023-lab-3.git"
 ```
 
-Then use `git push -u origin master`, the error should be fixed. Note that if it
-is the first time you connecting the gitlab, a window may jump out asking your
-gitlab username and password.
+**3. Push your changes:**
 
-And after that, done with the problem!
+```bash
+git push -u origin master
+```
+
+If this is your first time connecting, GitLab will prompt for your username and password.
+
+# **Key Takeaway**
+
+When working with GitLab (or any Git hosting service), always verify the exact remote URL format required. Many services require the `.git` extension, while others don't. Check the repository's clone instructions if you're unsure.

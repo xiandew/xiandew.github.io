@@ -1,5 +1,5 @@
 ---
-title: "Cerbot renewal"
+title: "Certbot renewal"
 description: "Quick guide to automating Let’s Encrypt renewals with Certbot, including dry-run testing and a safe cron pattern to keep certificates current."
 pubDate: 2019-03-09
 author: "Xiande Wen"

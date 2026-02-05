@@ -6,15 +6,15 @@ author: "Xiande Wen"
 tags: ["linux", "swap", "memory-management", "server", "devops"]
 ---
 
-Recently, I was trying to deploy a WordPress website on a linux server with no PHP and
-MySQL pre-installed. Installing packages is easy in Linux but things did not
-go well in my server which only has RAM for 1 GB.
+Recently, I was trying to deploy a WordPress website on a Linux server with no PHP and
+MySQL pre-installed. Installing packages is easy in Linux, but things did not
+go well on my server, which only has 1 GB of RAM.
 
-It kept running out of RAM when installing PHP. The server do have 40 GB disk
-memory but no swap space had been defined.
+It kept running out of RAM when installing PHP. The server does have 40 GB of disk
+space, but no swap space had been defined.
 
-As it is the first time I did it so I figured that it would useful to note down
-something for future references.
+Since it was the first time I did this, I figured it would be useful to note down
+something for future reference.
 
 # **What is swap?**
 
@@ -84,8 +84,8 @@ Swap:   1999           0        1999
 
 `Mem` denotes the total usable memory for the system.
 
-`Swap` is the defined swap space in the system. In my case, I configure the
-tatal swap space as 2 GB approx.
+`Swap` is the defined swap space in the system. In my case, I configured the
+total swap space to approximately 2 GB.
 
 **5. Clear the swap space**
 
