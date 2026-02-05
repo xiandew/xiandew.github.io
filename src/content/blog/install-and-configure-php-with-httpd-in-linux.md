@@ -17,9 +17,9 @@ wget "http://cn2.php.net/distributions/php-7.0.6.tar.gz"
 ```bash
 tar -zxvf php-7.0.6.tar.gz
 ```
-# **Check if httpd_devel installed**
+# **Check if httpd_devel is installed**
 
-if not, install it as following,
+If not, install it as follows:
 
 ```bash
 yum install httpd-devel
@@ -27,9 +27,9 @@ yum install httpd-devel
 
 or using `apt-get`.
 
-It is important to check the existence of `httpd_devel` before installing PHP.
-Because if there is no `httpd_devel`, related `.so` files for PHP will not be
-generated, which is essential for configuring PHP with httpd.
+It is important to check for the existence of `httpd_devel` before installing PHP.
+Without `httpd_devel`, the required `.so` files for PHP will not be
+generated, which are essential for configuring PHP with httpd.
 
 # **PHP configuration**
 

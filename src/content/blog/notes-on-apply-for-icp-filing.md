@@ -48,6 +48,18 @@ existed ICP filing could be revoked and you probably need to apply for another o
 
 **固定IP备案流程**
 
+For individual or non-commercial users (非经营性), there is typically no separate process for "Fixed IP Filing" (IP地址备案) that you need to initiate manually. The term often refers to the **IP Address Reporting** (IP地址报备) which is the responsibility of your Internet Service Provider (ISP) or Cloud Provider (like Aliyun, Tencent Cloud).
+
+When you complete the standard **Domain ICP Filing** (域名备案), you will select your server instance. Your provider then automatically handles the necessary IP reporting to the MIIT on the backend. You do not need to file for the IP address separately unless you are a network operator.
+
+Simply ensure your domain filing is successful and your domain resolves to the correct server IP.
+
+For individual or non-commercial users (非经营性), there is typically no separate process for "Fixed IP Filing" (IP地址备案) that you need to initiate manually. The term often refers to the **IP Address Reporting** (IP地址报备) which is the responsibility of your Internet Service Provider (ISP) or Cloud Provider (like Aliyun, Tencent Cloud).
+
+When you complete the standard **Domain ICP Filing** (域名备案), you will select your server instance. Your provider then automatically handles the necessary IP reporting to the MIIT on the backend. You do not need to file for the IP address separately unless you are a network operator.
+
+Simply ensure your domain filing is successful and your domain resolves to the correct server IP.
+
 [工信部备案管理系统](http://www.miitbeian.gov.cn/) > 备案流程 > IP地址报备流程,如下图所示:
 
 ![](https://i.loli.net/2019/03/04/5c7cbba04abf6.jpg)

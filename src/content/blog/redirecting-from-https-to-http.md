@@ -6,29 +6,33 @@ author: "Xiande Wen"
 tags: ["https", "ssl", "apache", "htaccess", "seo"]
 ---
 
-> You can't redirect it cause the client won't connect to https on port 443 without a valid certificate.
+# **The Core Problem**
 
-# **What's useful with this?**
+You **cannot** redirect HTTPS to HTTP if your SSL certificate is invalid or missing.
 
-*Note*
+Here's why: When a browser tries to load `https://example.com`, it establishes a secure TLS connection **before** any HTTP communication happens. If the certificate is invalid, the browser shows a security error and stops—it never gets to see your redirect rules.
 
-Just let you know and save you some time, maybe. If you have not obtained an
-HTTPS certificate for your site, then things that I am going to talk about may
-not be so relevant or important to you.
+> You can't redirect it because the client won't connect to https on port 443 without a valid certificate.
 
-It seems to make no sense to have such a demand, but it may be the first question
-you ask when you have messed up your HTTPS certificate but don't know how to
-deal with it. Actually, it does not matter much if you do not care about the
-SEO stuff since your site can still be visited through HTTP.
+# **When Is This Useful?**
 
-However, things may not go well with SEO. If the search engine has stored your
-site's HTTP domain, such a crash on HTTPS will not cause any harm. Because instead of
-HTTPS, users can visit your site with HTTP without redirection to HTTPS. You can
-achieve that by simply turning off your HTTPS. But what if the search engine has stored
-your HTTPS address? As far as I know, like it said at the start, there is not
-much you can do with redirection but trying to fix the https certificate. Otherwise,
-you can just sadly give up the SEO things for now and wait the search engine to
-update your site's information and replace your https domain with the http one.
+**Note:** This may save you some time. If you have not obtained an
+HTTPS certificate for your site, then what I'm about to discuss may
+not be relevant or important to you.
+
+It may seem pointless to need this, but it may be the first question
+you ask when you've broken your HTTPS certificate and don't know how to
+fix it. Actually, it doesn't matter much if you don't care about
+SEO, since your site can still be accessed through HTTP.
+
+However, things may not go well with SEO. If the search engine has indexed your
+site's HTTP domain, a broken HTTPS certificate won't cause any harm—users can simply
+visit your site via HTTP without needing redirection from HTTPS. You can
+achieve this by simply disabling HTTPS. But what if the search engine has indexed
+your HTTPS address? As mentioned earlier, there isn't
+much you can do with redirection except fix the HTTPS certificate. Otherwise,
+you'll have to give up on SEO for now and wait for the search engine to
+update your site's information and replace the HTTPS domain with the HTTP one.
 
 # **What's more?**
 

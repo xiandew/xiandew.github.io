@@ -71,8 +71,9 @@ tags: ["wordpress", "migration", "database", "mysql", "tutorial"]
 
 # **Change the local directory**
 
-1. go to settings > general, change 'WordPress Address (URL)' and 'Site Address (URL)'; 2. save and then change the folder name;
-3. restart the browser to make sure cleaning the cache, then it should be changed and running.
+1. Go to Settings > General, and change 'WordPress Address (URL)' and 'Site Address (URL)'.
+2. Save the changes, then rename the folder.
+3. Restart the browser to clear the cache. The site should now be running from the new location.
 
 # **References**
 - [Moving WordPress - codex](https://codex.wordpress.org/Moving_WordPress)

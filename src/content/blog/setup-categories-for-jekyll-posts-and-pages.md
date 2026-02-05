@@ -6,11 +6,15 @@ author: "Xiande Wen"
 tags: ["jekyll", "categories", "liquid", "static-site", "tutorial"]
 ---
 
-A blog website may contain various categories of things. Putting posts all together
-in page list can be very messy sometimes and it is hard for readers to find posts
-within the same categories.
+As your blog grows, a flat list of posts becomes unwieldy. **Categories** provide structure and help readers discover related content.
 
-Here is some steps to display categories in Jekyll.
+Jekyll has built-in support for categories through front matter, but displaying them requires custom Liquid templates. This guide shows you how to:
+
+1. Display category tags on individual posts
+2. Create a categories index page with grouped post archives
+3. Link everything together for intuitive navigation
+
+Let's build a clean category system from scratch.
 
 # **Display categories for each Post**
 

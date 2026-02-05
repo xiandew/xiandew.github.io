@@ -6,22 +6,21 @@ author: "Xiande Wen"
 tags: ["wordpress", "seo", "php", "meta-tags", "tutorial"]
 ---
 
-Most WordPress themes do not provide keywords and description <meta> tags.
-That can be a problem when optimizing SEO. Of course, there are many plugins
-for solving this issue. However, not all servers are comfortable with those plugins.
-Some high-ranked SEO plugins may work perfectly on servers with high-standard
-configurations and features, but they are disasters for small personal servers.
+Most WordPress themes do not provide keywords and description `<meta>` tags.
+This can be a problem when optimizing for SEO. Of course, there are many plugins
+to solve this issue. However, not all servers can handle those plugins.
+Some highly-ranked SEO plugins may work perfectly on servers with high-end
+configurations and features, but they can be disastrous for small personal servers.
 It can be a serious problem to load a plugin consuming hundreds of megabytes on
-a small server with 1 gigabyte for instance. At the worst case, the website may
-not be loaded eventually.
+a small server with only 1 GB of RAM. In the worst case, the website may
+fail to load entirely.
 
-So if you only want to add those meta tags in your website with no need of monitoring
-the traffic statistics, here is a more efficient way for your references.
+If you only want to add those meta tags to your website without needing to monitor
+traffic statistics, here is a more efficient approach.
 
 # **Implementation**
 
-Adding the following code to `functions.php` located in your child theme will do the job
-and you are off to go.
+Add the following code to `functions.php` located in your child theme, and you're good to go.
 
 ```php
 function meta_seo() {

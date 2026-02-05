@@ -57,26 +57,26 @@ positive number means executing till that amount of time in seconds.
 
 # **Another update is currently in progress**
 
-This can happen when you refreshed the browser while updating the wordpress.
+This can happen when you refresh the browser while updating WordPress.
 
-> It is an automatic lock to prevent simultaneous core updates. It will be gone after 15 minutes. If you don't want to wait, delete the record from options table – usually `wp_options`.
+> It is an automatic lock to prevent simultaneous core updates. It will be gone after 15 minutes. If you don't want to wait, delete the record from the options table – usually `wp_options`.
 
-Since Wordpress 4.5:
+Since WordPress 4.5:
 
 ```php
 option_name = 'core_updater.lock'
 ```
 
-If you have an older installation (before Wordpress 4.5):
+If you have an older installation (before WordPress 4.5):
 
 ```php
 option_name = 'core_updater'
 ```
 
-Just navigate to you wordpress database and run this SQL code:
+Just navigate to your WordPress database and run this SQL code:
 
 ```sql
-delete * from wp_options where option_name = 'core_updater' or option_name = 'core_updater.lock';
+DELETE FROM wp_options WHERE option_name = 'core_updater' OR option_name = 'core_updater.lock';
 ```
 
 # **References**
