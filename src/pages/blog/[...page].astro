@@ -1,0 +1,62 @@
+---
+import SpotlightLayout from "../../layouts/SpotlightLayout.astro";
+import { getCollection } from "astro:content";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+	const posts = (await getCollection("blog")).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	);
+	return paginate(posts, { pageSize: 10 });
+};
+
+interface Props {
+	page: Page<CollectionEntry<"blog">>;
+}
+
+const { page } = Astro.props;
+---
+
+<SpotlightLayout title={`Blog - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+	<div>
+		<p class="subtitle">Blog</p>
+		<h1 class="section-title">Signals in the noise.</h1>
+		<p class="lead">
+			Long-form thoughts on programming, leadership, product design, and more.
+		</p>
+
+		<div style="margin-top: 18px; display: grid; gap: 12px;">
+			{
+				page.data.map((post) => (
+					<article class="panel" style="padding: 14px;">
+						<p class="text-muted" style="margin: 0;">
+							{post.data.pubDate.toLocaleDateString("en-us", {
+								year: "numeric",
+								month: "long",
+								day: "numeric",
+							})}
+						</p>
+						<p style="margin: 10px 0 0; font-weight: 700;">
+							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+						</p>
+						<p class="text-muted" style="margin: 10px 0 0; line-height: 1.7;">
+							{post.data.description}
+						</p>
+						<p class="text-muted font-mono" style="margin: 10px 0 0;">
+							<a href={`/blog/${post.id}/`}>[ read → ]</a>
+						</p>
+					</article>
+				))
+			}
+		</div>
+		<div
+			class="text-muted font-mono"
+			style="margin-top: 30px; display: flex; justify-content: space-between;"
+		>
+			{page.url.prev ? <a href={page.url.prev}>[ ← Newer ]</a> : <span />}
+			{page.url.next ? <a href={page.url.next}>[ Older → ]</a> : <span />}
+		</div>
+	</div>
+</SpotlightLayout>
