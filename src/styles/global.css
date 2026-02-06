@@ -217,36 +217,6 @@ p {
 	position: relative;
 }
 
-/* Glitch Effect */
-.glitch-word {
-	position: relative;
-	display: inline-block;
-}
-
-.glitch-word .glitch-measure {
-	visibility: hidden;
-}
-
-.glitch-word .glitch-overlay {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.glitch-word.glitching {
-	filter: contrast(1.05);
-}
-
-.glitch-word.glitching::after {
-	content: "";
-	position: absolute;
-	inset: 0;
-	border: 1px dashed var(--border-strong);
-	pointer-events: none;
-}
-
 .sr-only {
 	border: 0;
 	padding: 0;
@@ -265,6 +235,7 @@ p {
 	overflow: hidden;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
+	line-clamp: 3;
 	-webkit-line-clamp: 3;
 }
 
